@@ -64,10 +64,10 @@ if ($_POST['add_course'] == "true") {
     }
 
     if ($insertresult) {
-        $my_url = "add_course.html?insert_successful=true";
+        $my_url = "../index.html?insert_successful=true";
 
     } else {
-        $my_url = "add_course.html?insert_error=" . $insert_error;
+        $my_url = "../index.html?insert_error=" . $insert_error;
     }
 
 }

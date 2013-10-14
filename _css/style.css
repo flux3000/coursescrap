@@ -1,4 +1,4 @@
-/* content */
+/* main layout */
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -29,6 +29,8 @@ body {
     padding: 12px;
 }
 
+/* page elements */
+
 .course-listing {
     border: 1px dotted #999;
     overflow: auto;
@@ -53,15 +55,22 @@ body {
     padding: 10px;
 }
 
+.updn {
+    text-decoration: none;
+    padding-left: 2px;
+}
+.header {
+    font-weight: bold;
+    font-size: 13pt;
+    padding-bottom: 12px;
+}
+
+/* form elements */
+
 .form-element {
     float: left;
     width: 600px;
     padding: 10px;
-}
-
-.updn {
-    text-decoration: none;
-    padding-left: 2px;
 }
 
 input {
@@ -70,4 +79,15 @@ input {
 
 label {
     font-weight: bold;
+}
+
+/* text elements */
+
+.success {
+    font-weight: bold;
+    color: green;
+}
+.error {
+    font-weight: bold;
+    color: red;
 }
