@@ -18,11 +18,12 @@ if ($_POST['add_course'] == "true") {
 	$new_course_instructor_id = $_POST['new_course_instructor_id'];
 	$new_course_resource_id = $_POST['new_course_resource_id'];
 	$new_course_units = $_POST['new_course_units'];
-	$new_course_time = $_POST['new_course_time'];
+    $new_course_time = $_POST['new_course_time'];
+	$new_course_tag = $_POST['new_course_tag'];
 	$new_course_location = $_POST['new_course_location'];
 	$new_course_description = addslashes($_POST['new_course_description']);
 
-	// Validation against existing database
+	// Validation against existing database entries
     /*
     $course_exists_query = "SELECT * FROM course WHERE course_name='$new_course_name' OR course_resource_id='$new_course_resource_id';";
     $course_exists_result = mysql_db_query($authDBName, $course_exists_query);   
@@ -35,18 +36,30 @@ if ($_POST['add_course'] == "true") {
     if ($insert_error == "") { // there have been no errors
 
         $insertQuery_str = "INSERT INTO course (course_name, course_ccn, course_resource_id, course_units, course_time, course_location, course_description) VALUES ('$new_course_name', '$new_course_ccn', '$new_course_resource_id', '$new_course_units', '$new_course_time', '$new_course_location', '$new_course_description');";
-
         $insertresult = mysql_db_query($authDBName, $insertQuery_str);
         $new_course_id = mysql_insert_id();
 
         // insert the instructor/course relationship
 
         $insertQuery_str2 = "INSERT INTO course_instructor (course_instructor_course_id, course_instructor_instructor_id) VALUES ($new_course_id, $new_course_instructor_id);";
-
         $insertresult2 = mysql_db_query($authDBName, $insertQuery_str2);
         
         //echo 'insert query is ' . $insertQuery_str . '<br>';
         //echo 'insert query 2 is ' . $insertQuery_str2 . '<br>';
+
+        // now apply all tags that were chosen
+        if (!empty($new_course_tag)) {
+            foreach ($new_course_tag as $insert_tag_id) {
+                $insert_q = "INSERT INTO course_tag (course_tag_course_id, course_tag_tag_id) VALUES ($new_course_id, $insert_tag_id);";
+                //echo 'tag insert q is ' . $insert_q . '<br>';
+                $insert_result = mysql_db_query($authDBName, $insert_q);
+                if ($insert_result) {
+                    $insert_successful = "true";
+                }
+            }
+        } else {
+            echo 'empty';
+        }       
 
     }
 

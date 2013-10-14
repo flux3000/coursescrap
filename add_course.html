@@ -89,6 +89,20 @@
                 </div>
 
                 <div class="form-element">
+                    <label for="course_tag">Tags</label><br/><br/>
+                    <?php
+                        $tag_result = mysql_query("SELECT * FROM tag ORDER BY tag_name", $dblink);
+                        while ($tag_row = mysql_fetch_array($tag_result)) {
+
+                            echo '<input type="checkbox" style="padding:4px;" name="new_course_tag[]" value="' . $tag_row['tag_id'] . '">' . $tag_row['tag_name'] . "<br/>";
+
+                        }
+                    ?>
+                    </select>
+                </div>
+
+
+                <div class="form-element">
                     <input type="submit" value="Add Course">
                     <input type="hidden" name="add_course" value="true">
                 </div>

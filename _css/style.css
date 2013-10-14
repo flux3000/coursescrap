@@ -36,6 +36,12 @@ body {
     margin-bottom: 12px;
 }
 
+.header {
+    font-weight: bold;
+    font-size: 13pt;
+    padding-bottom: 12px;
+}
+
 .left-col {
     float: left;
     width: 500px;
@@ -53,6 +59,15 @@ body {
     padding: 10px;
 }
 
+.updn {
+    text-decoration: none;
+    padding-left: 2px;
+}
+
 input {
     padding: 6px;
+}
+
+label {
+    font-weight: bold;
 }

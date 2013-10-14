@@ -63,7 +63,7 @@ if ($action == "course_tag") {
 	}
 	//}
 
-	$my_url = "../index.html?courseid=".$courseid;
+	$my_url = "../index.html";
 
 } else {
 
