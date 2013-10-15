@@ -6,8 +6,8 @@
     <!-- PHP DB Initialization -->
 
     <?php
-        require("_php/auth.db.init.php");
-
+        require("_php/auth.db.init.php"); // db initilization variables
+        require("_php/library.php"); // php function library
         global $authDBHost;
         global $authDBName;
         global $authDBUser;
@@ -25,8 +25,7 @@
     <!-- link to javascript files -->
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
-    
+    <script src="_js/script.js"></script>
 
 </head>
 <body>
@@ -35,6 +34,12 @@
 
         <div id="title">
             I School Course Tracker
+        </div>
+
+        <div id="search">
+            <form action="index.html">
+                <input id="search_box" type="text" placeholder="Enter search term">
+            </form>
         </div>
 
         <div id="content">

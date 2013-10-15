@@ -1,5 +1,7 @@
 <?php
-require ("auth.db.init.php");     // Database connection libraries and settings
+require ("auth.db.init.php"); // database connection settings
+require ("library.php"); // php function library
+
 global $authDBHost;
 global $authDBName;
 global $authDBUser;
