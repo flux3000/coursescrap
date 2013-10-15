@@ -39,12 +39,13 @@
         <div id="search">
             <form action="index.html">
                 <input id="search_box" type="text" placeholder="Enter search term">
+				<input id="searchBtn" value="search" type="submit" />
             </form>
         </div>
 
         <div id="content">
 			<div class="usedTags"></div>
-			<div class="TagCloud"></div>
+			<div class="tagCloud"></div>
 			<div class="courseList"></div>
 		</div>
     </div>

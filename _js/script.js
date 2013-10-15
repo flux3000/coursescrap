@@ -6,6 +6,7 @@ $(document).ready(function() {
 
 function init() {
 	initIndexSliders();
+	initSearch();
 }
 
 function initIndexSliders(){
@@ -33,4 +34,26 @@ function initIndexSliders(){
 		});
 		$("body").append('<iframe src="add.php"></iframe>');
 	});
+}
+
+function initSearch(){
+	$("#searchBtn").click(function(e){
+		e.preventDefault();
+		$.ajax({
+			url: "_php/do_search.php",
+			success: searchReturn
+		})
+	});
+}
+function searchReturn(input){
+    data = JSON.parse(input);
+	//console.log(data);
+	
+	var search = data.search;
+	var related = data.related;
+	var results = data.results;
+	
+	$(".usedTags").append();
+	$(".tagCloud").append();
+	$(".courseList").append();
 }
