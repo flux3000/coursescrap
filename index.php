@@ -44,11 +44,13 @@
 
         <div id="content">
         <?php
-        if ($_GET['insert_successful'] == "true") { 
-            echo '<span class="success">Course successfully added.</span><br/>';
-        } elseif ($_GET['insert_error'] != "") { 
-            echo '<span class="error">Error adding course: ' . $_GET['insert_error'] . '</span><br/>';
-        }
+		if(isset($_GET['insert_successful'])){
+			if ($_GET['insert_successful'] == "true") { 
+				echo '<span class="success">Course successfully added.</span><br/>';
+			} elseif ($_GET['insert_error'] != "") { 
+				echo '<span class="error">Error adding course: ' . $_GET['insert_error'] . '</span><br/>';
+			}
+			}
         ?>
         <a href="add_course.html">[add new course]</a><br><br>
             <?php
