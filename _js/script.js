@@ -49,11 +49,29 @@ function searchReturn(input){
     data = JSON.parse(input);
 	//console.log(data);
 	
-	var search = data.search;
-	var related = data.related;
-	var results = data.results;
+	//Iterate through search tags and add them to the interface
+	for (var i = 0; i < data.search.length; i++) {
+		var sTag = data.search[i];
+		$(".usedTags").append('<li>' + sTag.name + '</li>');
+	}
 	
-	$(".usedTags").append();
-	$(".tagCloud").append();
-	$(".courseList").append();
+	//Iterate through related tags and add them to the interface
+	for (var i = 0; i < data.related.length; i++) {
+		var rTag = data.related[i];
+		$(".relatedTags").append('<li>' + rTag.name + '<span>' + rTag.score + '</span></li>');
+	}
+	
+	//Iterate through search results and add them to the interface
+	for (var i = 0; i < data.results.length; i++) {
+		var sTag = data.results[i];
+		//Create all the tags
+		var tagsHTML = "";
+		for (var u = 0; u < data.results[i].tags.length; u++) {
+			console.log(data.results[i].tags[u]);
+			var tag = data.results[i].tags[u];
+			tagsHTML += '<li>' + tag.name + '</li>';
+		}
+		//add the search results to the list
+		$(".courseList").append('<li><h4>' + sTag.name + '</h4><div>Instructor: ' + sTag.instructor + '</div><p>' + sTag.description + '</p><ul>' + tagsHTML + '</ul></li>');
+	}
 }

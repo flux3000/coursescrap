@@ -44,9 +44,12 @@
         </div>
 
         <div id="content">
-			<div class="usedTags"></div>
-			<div class="tagCloud"></div>
-			<div class="courseList"></div>
+			<h3>Search Tags:</h3>
+			<ul class="usedTags"></ul>
+			<h3>Related Tags:</h3>
+			<ul class="relatedTags"></ul>
+			<h3>Course List:</h3>
+			<ul class="courseList"></ul>
 		</div>
     </div>
 
