@@ -1,0 +1,39 @@
+html{
+	height: 100%;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+    padding: 12px;
+	text-align: center;
+}
+.search_slider, .add_slider{
+	width: 50%;
+	height: 100%;	
+	position: absolute;
+	text-align: center;
+}
+.search_slider div, .add_slider div{
+	margin-top: 200px;
+}
+.search_slider{	
+	background-color: white;
+	left: 0px;
+	color: black;
+}
+.add_slider{
+	background-color: black;
+	right: 0px;
+	color: white;
+}
+iframe{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+}

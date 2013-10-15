@@ -65,11 +65,11 @@ if ($action == "course_tag") {
 	}
 	//}
 
-	$my_url = "../index.php?tagupdate=true";
+	$my_url = "../add.php?tagupdate=true";
 
 } else {
 
-	$my_url = "../index.php?tagerror=true";
+	$my_url = "../add.php?tagerror=true";
 	
 }
 
