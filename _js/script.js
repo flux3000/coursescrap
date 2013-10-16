@@ -44,24 +44,26 @@ function initSearch(){
 		//console.log($('#search_query').val());
 		$.ajax({
 			url: "_php/do_search.php", 
-			data: {query: 'foo'},
+			data: {query: searchval},
 			dataType: 'json', 
 			type: "POST",
-			//success: searchReturn(data)
 			success: function(data){
-				console.log("SUCCESS");
+				searchReturn(data);				
 			},
 			error: function(data){
-				console.log("ERROR");			
+				console.log("ERROR");
+				console.log(data);			
 			}
 		})
 	});
 }
+
 function searchReturn(data){
-	console.log(data);
 
     data = JSON.parse(data);
+	console.log("PARSED DATA:");
 	console.log(data);
+
 	
 	//Iterate through search tags and add them to the interface
 	for (var i = 0; i < data.search.length; i++) {

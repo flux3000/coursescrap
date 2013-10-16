@@ -7,7 +7,17 @@ global $authDBName;
 global $authDBUser;
 global $authDBPasswd;
 
-phpinfo(INFO_VARIABLES);
+$newdata = '{';
+$newdata .= '"search":[{"name":"law"}],';
+$newdata .= '"related":[{"name": "rel1", "score":3},{"name": "rel2", "score":2}],';
+$newdata .= '"results":[{"name":"Information Law and Policy", "instructor":"Dierdre Mulligan", "description": "Three hours of lecture per week. Law is one of a number of policies that mediates the tension between free flow and restrictions on the flow of information. This course introduces students to copyright and other forms of legal protection for databases, licensing of information, consumer protection, liability for insecure systems and defective information, privacy, and national and international information policy. NOTE: Before Fall 2010, this course was offered for 2 units.", "tags":[{"name":"law", "score":3}, {"name":"policy", "score":1}]}]';
+$newdata .= '}';
+
+
+echo json_encode($newdata);
+/*
+
+
 // connect to the database
 $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
 mysql_select_db($authDBName);
@@ -25,7 +35,7 @@ while($q_row = mysql_fetch_array($q_result)) {
 
 }
 
-/*
+
 	The structure is
 	search:
 		[name]
