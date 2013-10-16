@@ -37,19 +37,30 @@
         </div>
 
         <div id="search">
-            <form action="index.html">
-                <input id="search_box" type="text" placeholder="Enter search term">
+            <form action="" method="post">
+                <input id="search_query" type="text" placeholder="Enter search term">
 				<input id="searchBtn" value="search" type="submit" />
             </form>
         </div>
 
         <div id="content">
-			<h3>Search Tags:</h3>
-			<ul class="usedTags"></ul>
-			<h3>Related Tags:</h3>
-			<ul class="relatedTags"></ul>
-			<h3>Course List:</h3>
-			<ul class="courseList"></ul>
+            <div class="results-related">
+                <h3>Searched Tags</h3>
+                <ul id="searched-tags">
+                    <li>Tag 1</li>
+                </ul>
+
+                <h3>Related Tags</h3>
+                <ul id="related-tags">
+                    <li>Tag 1</li>
+                </ul>               
+
+            </div>
+            <div class="results-main">
+                <ul id="course-results">
+                </ul>
+
+            </div>
 		</div>
     </div>
 

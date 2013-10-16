@@ -21,13 +21,14 @@ $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_e
 mysql_select_db($authDBName);
  
 // query the database for course names that match 'term'
-$rs = mysql_query('SELECT course_name FROM course WHERE course_name LIKE "%'. mysql_real_escape_string($_REQUEST['term']) .'%" limit 0,5');
+//$rs = mysql_query('SELECT course_name FROM course WHERE course_name LIKE "%'. mysql_real_escape_string($_REQUEST['term']) .'%" limit 0,5');
 
 // query the database for tag names that match 'term'
 $rs2 = mysql_query('SELECT tag_name FROM tag WHERE tag_name LIKE "%' . mysql_real_escape_string($_REQUEST['term']) .'%" limit 0,5');
 
 // loop through each value returned and format the response for jQuery
 $data = array();
+/*
 if ( $rs && mysql_num_rows($rs) )
 {
 	while( $row = mysql_fetch_array($rs, MYSQL_ASSOC) )
@@ -38,6 +39,7 @@ if ( $rs && mysql_num_rows($rs) )
 		);
 	}
 }
+*/
 if ( $rs2 && mysql_num_rows($rs2) )
 {
 	while( $row = mysql_fetch_array($rs2, MYSQL_ASSOC) )

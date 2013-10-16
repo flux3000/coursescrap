@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	init();
-	$('#search_box').autocomplete({source:'_php/autocomplete.php', minLength:2});
+	//$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});
     
 });
 
@@ -37,28 +37,42 @@ function initIndexSliders(){
 }
 
 function initSearch(){
+	var searchval;
 	$("#searchBtn").click(function(e){
 		e.preventDefault();
+		searchval = $('#search_query').val();
+		//console.log($('#search_query').val());
 		$.ajax({
-			url: "_php/do_search.php",
-			success: searchReturn
+			url: "_php/do_search.php", 
+			data: {query: 'foo'},
+			dataType: 'json', 
+			type: "POST",
+			//success: searchReturn(data)
+			success: function(data){
+				console.log("SUCCESS");
+			},
+			error: function(data){
+				console.log("ERROR");			
+			}
 		})
 	});
 }
-function searchReturn(input){
-    data = JSON.parse(input);
-	//console.log(data);
+function searchReturn(data){
+	console.log(data);
+
+    data = JSON.parse(data);
+	console.log(data);
 	
 	//Iterate through search tags and add them to the interface
 	for (var i = 0; i < data.search.length; i++) {
 		var sTag = data.search[i];
-		$(".usedTags").append('<li>' + sTag.name + '</li>');
+		$("#searched-tags").append('<li>' + sTag.name + '</li>');
 	}
 	
 	//Iterate through related tags and add them to the interface
 	for (var i = 0; i < data.related.length; i++) {
 		var rTag = data.related[i];
-		$(".relatedTags").append('<li>' + rTag.name + '<span>' + rTag.score + '</span></li>');
+		$("#related-tags").append('<li>' + rTag.name + '<span>' + rTag.score + '</span></li>');
 	}
 	
 	//Iterate through search results and add them to the interface
@@ -72,6 +86,6 @@ function searchReturn(input){
 			tagsHTML += '<li>' + tag.name + '</li>';
 		}
 		//add the search results to the list
-		$(".courseList").append('<li><h4>' + sTag.name + '</h4><div>Instructor: ' + sTag.instructor + '</div><p>' + sTag.description + '</p><ul>' + tagsHTML + '</ul></li>');
+		$("#course-results").append('<li><h4>' + sTag.name + '</h4><div>Instructor: ' + sTag.instructor + '</div><p>' + sTag.description + '</p><ul>' + tagsHTML + '</ul></li>');
 	}
 }
