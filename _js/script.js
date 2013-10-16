@@ -44,15 +44,17 @@ function initSearch(){
 		//console.log($('#search_query').val());
 		$.ajax({
 			url: "_php/do_search.php", 
-			data: {query: 'foo'},
+			data: {'tag': 'foo'},
 			dataType: 'json', 
 			type: "POST",
 			//success: searchReturn(data)
 			success: function(data){
-				console.log("SUCCESS");
+				console.log("SUCCESS:");
+				console.log(data);
 			},
 			error: function(data){
-				console.log("ERROR");			
+				console.log("ERROR:");
+				console.log(data);			
 			}
 		})
 	});

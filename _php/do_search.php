@@ -1,5 +1,10 @@
 <?php
+	$tag = $_POST['tag'];
+?>
+{"hi":<?php echo json_encode($tag)?>}
+<?php
 // initialize vars
+/*
 require("auth.db.init.php"); // db initilization variables
 require("library.php"); // php function library
 global $authDBHost;
