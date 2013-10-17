@@ -60,11 +60,8 @@ function initSearch(){
 
 function searchReturn(data){
 
-    data = JSON.parse(data);
-	console.log("PARSED DATA:");
 	console.log(data);
 
-	
 	//Iterate through search tags and add them to the interface
 	for (var i = 0; i < data.search.length; i++) {
 		var sTag = data.search[i];

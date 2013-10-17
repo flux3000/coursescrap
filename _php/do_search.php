@@ -18,8 +18,8 @@ $search_array['results'] = array();
 $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
 mysql_select_db($authDBName);
 
-$search_query = "Law and Policy";
-//$search_query = $_POST["query"];
+//$search_query = "Law and Policy";
+$search_query = $_POST["query"];
 
 // TO-DO - make this iterate through for multiple-term searches and add an OR clause to the query $q.
 
@@ -48,15 +48,7 @@ while($q_row = mysql_fetch_array($q_result)) {
 	$search_result_array = array(); // initialize sub-array to contain details on the "results" of this course info.
 	$search_result_tag_array = array(); // initialize sub-array to contain tags for this course.
 	
-	/*
-	$search_result_array["instructor"] = '"' . $this_instructor_firstname . ' ' . $this_instructor_lastname . '"'; 
-	$search_result_array["description"] = '"' . $this_course_description . '"'; 
-	$search_result_array["ccn"] = '"' . $this_course_ccn . '"';
-	$search_result_array["resource_id"] = '"' . $this_course_resource_id . '"'; 
-	$search_result_array["mgmt_req"] = '"' . $this_course_mgmt_req . '"'; 
-	$search_result_array["tech_req"] = '"' . $this_course_tech_req . '"'; 
-	*/
-
+	$search_result_array["name"] = $this_course_name; 
 	$search_result_array["instructor"] = $this_instructor_firstname . ' ' . $this_instructor_lastname; 
 	$search_result_array["description"] = $this_course_description; 
 	$search_result_array["ccn"] = $this_course_ccn;
@@ -117,7 +109,6 @@ if($q_result === FALSE) {
 
 arsort($search_array['related']);
 
-
 if ($DEBUG) {
 	echo "<pre>";
 	echo "Search Term Array:<br>---<br>";
@@ -137,8 +128,8 @@ if ($DEBUG) {
 }
 
 // encode the data as json and send it back to the page.
-echo json_encode($search_array);
 
+echo json_encode($search_array);
 
 /*
 	The structure is
