@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	init();
-	//$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});
+	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});
     
 });
 
