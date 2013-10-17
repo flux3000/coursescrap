@@ -13,6 +13,7 @@ mysql_select_db($authDBName);
 
 $DEBUG = 0; // change to 1 if we want to see a bunch of debugging comments.
 
+
 if ($_POST['add_course'] == "true") {
 
 	$new_course_name = $_POST['new_course_name'];
@@ -23,7 +24,7 @@ if ($_POST['add_course'] == "true") {
     $new_course_time = $_POST['new_course_time'];
 	$new_course_tag = $_POST['new_course_tag'];
 	$new_course_location = $_POST['new_course_location'];
-	$new_course_description = addslashes($_POST['new_course_description']);
+	$new_course_description = mysql_real_escape_string($_POST['new_course_description']);
 
 	// Validation against existing database entries
     /*

@@ -74,7 +74,7 @@ function searchReturn(data){
 	//Iterate through related tags and add them to the interface
 	for (var i = 0; i < data.related.length; i++) {
 		var rTag = data.related[i];
-		$("#related-tags").append('<li>' + rTag.name + '<span>' + rTag.score + '</span></li>');
+		$("#related-tags").append('<li>' + rTag.name + '<span>' + rTag.count + '</span></li>');
 	}
 	
 	//Iterate through search results and add them to the interface
