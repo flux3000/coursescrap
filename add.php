@@ -52,7 +52,7 @@
 			}
 			}
         ?>
-        <a href="add_course.html">[add new course]</a><br><br>
+        <a id="addCourse" href="add_course.html">[add new course]</a><br><br>
             <?php
 				$course = mysql_query("SELECT * FROM course", $dblink);
 				while ($course_row = mysql_fetch_array($course)) {

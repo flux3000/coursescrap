@@ -39,7 +39,7 @@
         <div id="search">
             <form action="" method="post">
                 <input id="search_query" type="text" placeholder="Enter search term">
-				<input id="searchBtn" value="search" type="submit" />
+				<input id="searchBtn" value="Go" type="submit" />
             </form>
         </div>
 
@@ -52,7 +52,7 @@
 
                 <h3>Related Tags</h3>
                 <ul id="related-tags">
-                    <li>Tag 1</li>
+                    <li>Core Curriculum/Required</li>
                 </ul>               
 
             </div>

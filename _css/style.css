@@ -26,16 +26,45 @@ body {
 
 #content {
     overflow: auto;
-    padding: 12px;
+    /*padding: 12px;*/
 }
 
 /* page elements */
+
+#content h3{
+    background: #CCC;
+    font-size: large;
+    padding: 10px;
+    -webkit-border-radius:50px;
+    padding-left: 20px;
+}
+
+/*#content ul{
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+}*/
 
 .course-listing {
     border: 1px dotted #999;
     overflow: auto;
 	width: 100%;
     margin-bottom: 12px;
+}
+
+.left-col .header{
+      font-size: 20px;
+    font-weight: bolder;
+    padding: 5px;
+    background:#CCC;
+}
+.left-col{
+    
+    padding:10px;
+}
+.right-col{
+    padding-left: 10px;
+    background: cornflowerblue;
 }
 
 .header {
@@ -49,11 +78,58 @@ body {
     width: 300px;
     padding: 10px;
 }
+
+.results-related ul li{
+
+    padding: 5px;
+}
 .results-main {
     float: left;
     width: 700px;
-    padding: 10px;
+    /*padding-left: 20px;*/
 }
+
+/* Elements handling display of search results */
+#course-results{
+    padding-top:10px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+
+}
+#course-results h4{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px 5px;
+
+}
+#course-results ul{
+
+    padding:5px;
+}
+#course-results li{
+    border: 1px solid #CCC;
+    padding-bottom:10px;
+}
+#course-results div{
+    background: #CCC;
+    padding: 8px;
+}
+#course-results p{
+    /*border: 1px solid #ccc;*/
+    padding: 8px;
+}
+#course-results ul li {
+    display:inline;
+    padding: 8px;
+    color: cornflowerblue;
+    text-decoration:underline;
+    border:0;
+    }
+#course-results ul li sup {
+    font-size: 12px;
+    vertical-align: top; 
+
+    }
 
 .updn {
     text-decoration: none;
@@ -95,3 +171,97 @@ label {
     font-weight: bold;
     color: red;
 }
+
+/* search term box */
+#search{
+    padding: 12px;
+   
+}
+#search_query{
+     width: 235px;
+    font-size: 14px;
+}
+#searchBtn{
+
+    background-color: #4479BA;
+    /*background-color: #F36CBC;*/
+    -webkit-border-radius:100px;
+    -moz-border-radius:100px;
+    border-radius: 100px;
+    color:#fff;
+    font-family: 'Oswald';
+    font-size: 125%;
+    text-shadow:1px 1px #4479BA;
+    cursor:pointer;
+    border: 1px solid ##4479BA;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+#searchBtn:hover{
+    
+    box-shadow: 0px 0px 1px #777;
+    background: #356094;
+    border: solid 1px #2A4E77;
+    text-decoration: none;
+
+}
+
+/*#searched-tags{
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    color:cornflowerblue;
+}*/
+#related-tags, #searched-tags{
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    color:cornflowerblue;
+}
+
+
+#addCourse {
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #20538D;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:pointer;
+}
+.addCourse:hover {
+    background: #356094;
+    border: solid 1px #2A4E77;
+    text-decoration: none;
+}
+.addCourse:active {
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+
+
+
+
+
+
+
+
