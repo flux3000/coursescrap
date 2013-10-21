@@ -31,10 +31,12 @@
 <body>
     
     <div id="container">
-
-        <div id="title">
+		<a href="index.php"><img class="back" src="_img/back.png" alt="back"></a>
+        
+		<div id="title">
             SEARCH
         </div>
+		
 
         <div id="search">
             <form action="" method="post">

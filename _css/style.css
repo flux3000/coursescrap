@@ -257,9 +257,12 @@ label {
     background: #2E5481;
     border: solid 1px #203E5F;
 }
-
-
-
+.back{
+	float: right;
+}
+.back:hover{
+	opacity: 0.4;
+}
 
 
 

@@ -36,6 +36,12 @@ function init() {
 }
 
 function initIndexSliders(){
+	$(".first").click(function(){
+		$(".search_slider").click();
+	})
+	$(".second").click(function(){
+		$(".add_slider").click();
+	})
 	$(".search_slider").click(function(){
 		var aTime = 1000;
 		$(this).animate({"width": "100%"}, aTime, function() {
@@ -47,6 +53,11 @@ function initIndexSliders(){
 			$(this).remove();
 		});
 		$("body").append('<iframe src="search.php"></iframe>');
+		$('header').animate({
+			'opacity':'0'
+		}, aTime/3, function(){
+			$(this).remove();
+		});
 	});
 	$(".add_slider").click(function(){
 		var aTime = 1000;
@@ -59,6 +70,11 @@ function initIndexSliders(){
 			$(this).remove();
 		});
 		$("body").append('<iframe src="add.php"></iframe>');
+		$('header').animate({
+			'opacity':'0'
+		}, aTime/3, function(){
+			$(this).remove();
+		});
 	});
 }
 
