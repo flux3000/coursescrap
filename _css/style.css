@@ -160,6 +160,16 @@ label {
 /* jquery UI autocomplete */
 
 .ui-helper-hidden-accessible { display:none; }
+ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all{
+    background: #CCC;
+    /*padding-top:5px;*/
+    border: 1px solid rgb(100,149,237);
+}
+ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li{
+    padding-bottom:5px;
+    padding-top: 5px;
+    border: 1px solid rgb(100,149,237);
+}
 
 /* text elements */
 
