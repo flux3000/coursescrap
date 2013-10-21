@@ -47,12 +47,10 @@
             <div class="results-related">
                 <h3>Searched Tags</h3>
                 <ul id="searched-tags">
-                    <li>Tag 1</li>
                 </ul>
 
                 <h3>Related Tags</h3>
                 <ul id="related-tags">
-                    <li>Core Curriculum/Required</li>
                 </ul>               
 
             </div>

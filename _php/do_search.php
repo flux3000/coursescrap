@@ -21,13 +21,23 @@ mysql_select_db($authDBName);
 //$search_query = "Law and Policy";
 $search_query = $_POST["query"];
 
+/*Ashley*/
 // TO-DO - make this iterate through for multiple-term searches and add an OR clause to the query $q.
 
 $search_array['search']['name'] = $search_query;
+$search_terms = explode(',', $search_query);
+$or_search_term = "";
+foreach($search_terms as $term){
+	$or_search_term .= "'".$term."',";
+}
+$or_search_term = substr($or_search_term, 0, -1);
+/*------*/
 
 // assemble the main database query. This will return course and professor details.
-$q = "SELECT DISTINCT course.*, instructor.*, tag.*, course_tag.course_tag_count FROM tag, course, course_tag, instructor, course_instructor WHERE tag.tag_name='$search_query' AND course_tag.course_tag_tag_id=tag.tag_id AND course.course_id=course_tag.course_tag_course_id AND course.course_id=course_instructor.course_instructor_course_id AND instructor.instructor_id=course_instructor.course_instructor_instructor_id ORDER BY course_tag.course_tag_count DESC;";
+//$q = "SELECT DISTINCT course.*, instructor.*, tag.*, course_tag.course_tag_count FROM tag, course, course_tag, instructor, course_instructor WHERE '$or_search_term' AND course_tag.course_tag_tag_id=tag.tag_id AND course.course_id=course_tag.course_tag_course_id AND course.course_id=course_instructor.course_instructor_course_id AND instructor.instructor_id=course_instructor.course_instructor_instructor_id ORDER BY course_tag.course_tag_count DESC;";
 
+$q = "SELECT DISTINCT course.*, instructor.*, tag.*, course_tag.course_tag_count FROM tag, course, course_tag, instructor, course_instructor WHERE tag.tag_name IN (".$or_search_term.") AND course_tag.course_tag_tag_id=tag.tag_id AND course.course_id=course_tag.course_tag_course_id AND course.course_id=course_instructor.course_instructor_course_id AND instructor.instructor_id=course_instructor.course_instructor_instructor_id GROUP BY course.course_name ORDER BY course_tag.course_tag_count DESC;";
+//echo $q;
 if ($DEBUG)	{echo "q: " . $q . "<br><br>";}
 
 $q_result = mysql_db_query($authDBName, $q);

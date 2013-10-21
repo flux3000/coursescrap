@@ -1,0 +1,46 @@
+[13-Oct-2013 19:25:32 America/New_York] PHP Catchable fatal error:  Object of class mysqli could not be converted to string in /home/ryanbak/public_html/iolab/_php/auth.db.init.php on line 20
+[13-Oct-2013 21:44:05 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/ryanbak/public_html/iolab/_php/add_course.php on line 27
+[16-Oct-2013 16:14:02 America/New_York] PHP Parse error:  syntax error, unexpected '{' in /home/ryanbak/public_html/iolab/_php/do_search.php on line 20
+[16-Oct-2013 16:14:03 America/New_York] PHP Parse error:  syntax error, unexpected '{' in /home/ryanbak/public_html/iolab/_php/do_search.php on line 20
+[16-Oct-2013 16:14:10 America/New_York] PHP Parse error:  syntax error, unexpected '{' in /home/ryanbak/public_html/iolab/_php/do_search.php on line 20
+[16-Oct-2013 16:15:35 America/New_York] PHP Parse error:  syntax error, unexpected '{' in /home/ryanbak/public_html/iolab/_php/do_search.php on line 20
+[16-Oct-2013 16:31:58 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 16:40:47 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 16:41:22 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 16:54:56 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 16:55:08 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:40 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:42 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:42 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:42 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:43 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:43 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:43 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:43 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:01:43 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:03:26 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:03:27 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:03:27 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:03:27 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:03:28 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:03:28 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:03:28 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:03:28 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:04:54 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:04:55 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:04:55 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:04:55 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:07:48 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:12:53 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:18:12 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:22:32 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:24:17 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 23
+[16-Oct-2013 17:45:49 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/ryanbak/public_html/iolab/_php/do_search.php on line 10
+[19-Oct-2013 10:48:45 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/ryanbak/public_html/iolab/_php/autocomplete.php on line 52
+[19-Oct-2013 10:48:45 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/ryanbak/public_html/iolab/_php/autocomplete.php on line 52
+[19-Oct-2013 10:48:52 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/ryanbak/public_html/iolab/_php/autocomplete.php on line 52
+[19-Oct-2013 17:17:49 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 39
+[19-Oct-2013 18:30:17 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 42
+[19-Oct-2013 18:35:42 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 42
+[19-Oct-2013 18:38:34 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 42
+[19-Oct-2013 18:40:37 America/New_York] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ryanbak/public_html/iolab/_php/do_search.php on line 42

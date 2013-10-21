@@ -223,6 +223,15 @@ label {
     color:cornflowerblue;
 }
 
+#searched-tags li:hover{
+	cursor: pointer;
+}
+
+.tagList:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 
 #addCourse {
     padding: 10px 15px;
@@ -258,7 +267,9 @@ label {
     border: solid 1px #203E5F;
 }
 
-
+.deleteButton{
+	display: none;
+}
 
 
 
