@@ -59,10 +59,13 @@ body {
     background:#CCC;
 }
 .left-col{
-    
+    float: left;
+    width: 600px;    
     padding:10px;
 }
 .right-col{
+    float: left;
+    width: 450px;
     padding-left: 10px;
     background: cornflowerblue;
 }
