@@ -241,7 +241,6 @@ function searchReturn(data){
 		$("#course-results").append('<li><h4>No results found</h4><div></li>');
 			
 	}
-=======
 $(document).ready(function() {
 	init();
 	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});
