@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function() {
 	init();
 	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});
@@ -417,5 +416,4 @@ function searchReturn(data){
 		$("#course-results").append('<li><h4>No results found</h4><div></li>');
 			
 	}
->>>>>>> d7dd635643452a25652b26afa0591d98928bbb66
 }
