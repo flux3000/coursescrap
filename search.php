@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IO Lab - Project 2</title>
+    <title>course (s)crap - search</title>
 
     <!-- PHP DB Initialization -->
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IO Lab - Project 2</title>
+    <title>course (s)crap</title>
     
     <!-- link to css files -->
     <link rel="stylesheet" type="text/css" href="_css/reset.css" />
