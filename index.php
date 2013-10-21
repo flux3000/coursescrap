@@ -17,7 +17,8 @@
 <body>
     
 	<div class="search_slider"><div><img src="_img/search.png" alt="search"/><h1>Search</h1></div></div>
-	<div class="add_slider"><div><img src="_img/add.png" alt="add"/><h1>Add or Vote</h1></div></div>
+	<div class="add_slider"><div><img src="_img/add.png" alt="add"/><h1>Add</h1></div></div>
+	<header><p class="first"><span class="h">course</span><br>Search for a course. <i>o</i></p><p class="second"><span class="h">(s)crap</span><br><i>r</i> Add a course to catalogue.</p><header>
 
 </body>
 </html>

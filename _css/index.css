@@ -12,6 +12,34 @@ h1 {
     padding: 12px;
 	text-align: center;
 }
+header{
+	position: absolute;
+	width: 100%;
+	margin-top:50px;
+	cursor: default;
+}
+header .second{
+	color: white;
+}
+header .first{
+	text-align:right;
+}
+header i{
+	font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+header p{
+	display:inline-block;
+	width: 50%;
+}
+header .h{
+	font-family: 'Raleway', sans-serif;
+	font-size: 24pt;
+	font-weight: bold;
+	padding: 12px;
+	padding: 7px 3px;
+	display: inline-block;
+}
 .search_slider, .add_slider{
 	width: 50%;
 	height: 100%;	
@@ -19,7 +47,7 @@ h1 {
 	text-align: center;
 }
 .search_slider div, .add_slider div{
-	margin-top: 200px;
+	margin-top: 300px;
 }
 .search_slider{	
 	background-color: white;

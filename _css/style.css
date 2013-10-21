@@ -266,11 +266,20 @@ label {
     background: #2E5481;
     border: solid 1px #203E5F;
 }
+<<<<<<< HEAD
 
 .deleteButton{
 	display: none;
 }
 
+=======
+.back{
+	float: right;
+}
+.back:hover{
+	opacity: 0.4;
+}
+>>>>>>> d7dd635643452a25652b26afa0591d98928bbb66
 
 
 
