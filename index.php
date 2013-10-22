@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div class="search_slider"><div><img src="_img/search.png" alt="search"/><h1>Search</h1><p class="first">Search for classes</p></div></div>
-	<div class="add_slider"><div><img src="_img/add.png" alt="add"/><h1>Add</h1><p>Add/Vote on tags</p></div></div>
+	<div class="add_slider"><div><img src="_img/add.png" alt="add"/><h1>Tag</h1><p>Tag classes/Vote tags</p></div></div>
 	<header><p class="first"><span class="h">course</span></p><p class="second"><span class="h">(s)crap</span></p><header>
 
 </body>
