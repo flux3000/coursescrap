@@ -3,6 +3,20 @@ $(document).ready(function() {
 	/*Ashley: Implement the autocomplete functionality on the 'Search' box on the Search page and on the 'Add Tag' box on the 'Tag' page. This is achieved by using the autocomplete jQuery UI widget*/
 	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});	
 	$('.addTagText').autocomplete({source:'_php/autocomplete.php', minLength:1});
+
+	/* Ryan */
+    $(".course-listing").on("click", ".course-listing-header.contracted", function() {
+    	$(".course-listing-content").slideUp();
+    	$(this).removeClass("contracted");
+    	$(this).addClass("expanded");
+    	$(this).siblings(".course-listing-content").slideDown();
+    });    
+    $(".course-listing").on("click", ".course-listing-header.expanded", function() {
+    	$(".course-listing-content").slideUp();
+    	$(this).removeClass("expanded");
+    	$(this).addClass("contracted");
+    });
+
 	
 	$(document).on( 'click', "#related-tags li", function(){
 			var selectTag = $.trim($(this).attr("val"));
@@ -111,6 +125,8 @@ function init() {
 	initIndexSliders();
 	initSearch();
 }
+
+
 
 function initIndexSliders(){
         $(".first").click(function(){
