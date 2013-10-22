@@ -3,6 +3,20 @@ $(document).ready(function() {
 	/*Ashley: Implement the autocomplete functionality on the 'Search' box on the Search page and on the 'Add Tag' box on the 'Tag' page. This is achieved by using the autocomplete jQuery UI widget*/
 	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});	
 	$('.addTagText').autocomplete({source:'_php/autocomplete.php', minLength:1});
+
+	/* Ryan */
+    $(".course-listing").on("click", ".course-listing-header.contracted", function() {
+    	$(".course-listing-content").slideUp();
+    	$(this).removeClass("contracted");
+    	$(this).addClass("expanded");
+    	$(this).siblings(".course-listing-content").slideDown();
+    });    
+    $(".course-listing").on("click", ".course-listing-header.expanded", function() {
+    	$(".course-listing-content").slideUp();
+    	$(this).removeClass("expanded");
+    	$(this).addClass("contracted");
+    });
+
 	
 	$(document).on( 'click', "#related-tags li", function(){
 			var selectTag = $.trim($(this).attr("val"));
@@ -108,51 +122,13 @@ $(document).ready(function() {
 
 
 function init() {
-	initIndexSliders();
 	initSearch();
-}
 
-function initIndexSliders(){
-        $(".first").click(function(){
-                $(".search_slider").click();
-        })
-        $(".second").click(function(){
-                $(".add_slider").click();
-        })
-        $(".search_slider").click(function(){
-                var aTime = 1000;
-                $(this).animate({"width": "100%"}, aTime, function() {
-                        $(this).animate({"opacity": "0"}, aTime, function() {
-                                $(this).remove();
-                        });
-                });
-                $(".add_slider").css("overflow", "hidden").animate({"width": "0%"}, aTime, function(){
-                        $(this).remove();
-                });
-                $("body").append('<iframe src="search.php"></iframe>');
-                $('header').animate({
-                        'opacity':'0'
-                }, aTime/3, function(){
-                        $(this).remove();
-                });
-        });
-        $(".add_slider").click(function(){
-                var aTime = 1000;
-                $(this).animate({"width": "100%"}, aTime, function() {
-                        $(this).animate({"opacity": "0"}, aTime, function() {
-                                $(this).remove();
-                        });
-                });
-                $(".search_slider").css("overflow", "hidden").animate({"width": "0%"}, aTime, function(){
-                        $(this).remove();
-                });
-                $("body").append('<iframe src="tag.php"></iframe>');
-                $('header').animate({
-                        'opacity':'0'
-                }, aTime/3, function(){
-                        $(this).remove();
-                });
-        });
+	//Backbutton clicked
+	$(".back").click(function(){
+		parent.showevent();
+	})
+
 }
 
 

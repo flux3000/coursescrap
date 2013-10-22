@@ -31,7 +31,7 @@
 <body>
     
     <div id="container">
-        <a href="index.php"><img class="back" src="_img/back.png" alt="back"></a>
+        <img class="back" src="_img/back.png" alt="back">
         <div id="title">
             course (s)crap
         </div><!--<div id="title">-->
@@ -47,12 +47,18 @@
 			}
         ?>
         <a id="addCourse" href="add_course.html">[add new course]</a><br><br>
+
 			<!--Ashley: Code to display the courses, tag, and instructor information-->
+
+			<div id="course-listings">
+            <!--Ashley-->
             <?php
 				$course = mysql_query("SELECT * FROM course", $dblink);
 				while ($course_row = mysql_fetch_array($course)) {
 					$course_instructor_id = mysql_fetch_array(mysql_query("SELECT `course_instructor_instructor_id` FROM `course_instructor` WHERE `course_instructor_course_id`='".$course_row["course_id"]."'", $dblink));
-					echo "<div class='course-listing'>";
+					
+                    echo "<div class='course-listing'>";
+
 
 						echo "<div class='left-col'>";
 							$instructor = mysql_fetch_array(mysql_query("SELECT * FROM `instructor` WHERE `instructor_id`='".$course_instructor_id["course_instructor_instructor_id"]."'", $dblink));						
@@ -86,6 +92,49 @@
             ?>  
         </div><!--<div id="content">-->
     </div><!--<div id="container">-->
+			<?php
+                    echo "<div class='course-listing-header contracted'>";
+                        echo '<div class="course-title">'.$course_row["course_name"].'</div>';
+                    echo '</div>';
+
+                    echo '<div class="course-listing-content" style="display:none;">';
+
+    					echo "<div class='left-col'>";
+    						$instructor = mysql_fetch_array(mysql_query("SELECT * FROM `instructor` WHERE `instructor_id`='".$course_instructor_id["course_instructor_instructor_id"]."'", $dblink));						
+    						echo "<br>Instructor: ".$instructor["instructor_firstname"]." ".$instructor["instructor_lastname"]."<br><br>".$course_row["course_time"]."<br><br>".$course_row["course_description"]."<br><br>";					
+    					echo "</div>";
+    					
+    					echo "<div class='right-col'>";
+                            echo '<div class="header">Tags</div>';
+        						$course_tag_result = mysql_query("SELECT `course_tag_tag_id`, `course_tag_count` FROM `course_tag` WHERE `course_tag_course_id`='".$course_row["course_id"]."' ORDER BY `course_tag_count` DESC", $dblink);
+        						while ($course_tag_row = mysql_fetch_array($course_tag_result)) {
+        							$testresult = mysql_query("SELECT * FROM tag WHERE `tag_id`='".$course_tag_row["course_tag_tag_id"]."'", $dblink);
+        							while ($testrow = mysql_fetch_array($testresult)) {
+        								echo $testrow["tag_name"]." (".$course_tag_row["course_tag_count"].") <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>&#43</a>   <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=dn'>&#45</a>"."<br><br>";
+        							}
+        						}
+        						
+        					?>
+    						
+    						<div id="addTag">
+    							<form class="add-tag-form" action="" method="post">
+    								<input class="courseId" type="hidden" value=<?php echo $course_row["course_id"];?> />
+    								<input class="addTagText" type="text" placeholder="Select a Tag" />
+    								<input class="addTagBtn" value="Add Tag" type="submit" />
+    								<div id="resultsFeedback"></div>
+    							</form>
+    						</div>
+    						<div id="menu-container" style="position:absolute; width: 500px;"></div>
+    					<?php
+    					echo "</div>"; // end right-col
+                        echo "</div>"; // end course-listing-content
+                    echo "</div>";
+                }
+            ?>
+            </div>
+		<!------>
+        </div>
+    </div>
 
 </body>
 </html>

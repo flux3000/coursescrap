@@ -52,12 +52,14 @@ body {
     margin-bottom: 12px;
 }
 
-.left-col .header{
+.course-listing-header {
+    width: 100%;
     font-size: 20px;
     font-weight: bolder;
     padding: 5px;
     background:#CCC;
 }
+
 .left-col{
     float: left;
     width: 600px;    
@@ -284,6 +286,7 @@ ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corne
 }
 .back{
 	float: right;
+	cursor: pointer;
 }
 .back:hover{
 	opacity: 0.4;

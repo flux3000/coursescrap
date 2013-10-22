@@ -48,6 +48,7 @@ header .h{
 }
 .search_slider div, .add_slider div{
 	margin-top: 300px;
+	min-width: 140px;
 }
 .search_slider{	
 	background-color: white;
@@ -58,6 +59,9 @@ header .h{
 	background-color: black;
 	right: 0px;
 	color: white;
+}
+.search_slider p, .add_slider p{
+	line-height: 0;
 }
 iframe{
 	width: 100%;

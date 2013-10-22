@@ -31,7 +31,7 @@
 <body>
     
     <div id="container">
-		<a href="index.php"><img class="back" src="_img/back.png" alt="back"></a>
+		<img class="back" src="_img/back.png" alt="back">
         
 		<div id="title">
             SEARCH
