@@ -1,30 +1,25 @@
 $(document).ready(function() {
 	init();
-	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});
-	/*Ashley*/
+	/*Ashley: Implement the autocomplete functionality on the 'Search' box on the Search page and on the 'Add Tag' box on the 'Tag' page. This is achieved by using the autocomplete jQuery UI widget*/
+	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});	
 	$('.addTagText').autocomplete({source:'_php/autocomplete.php', minLength:1});
-	/*------*/
-	//Clickable related-tags list
-	// $('#related-tags li').on("click", (function() {
- //           alert('Clicked list. ' + $(this).text())
- //   }));
 	
 	$(document).on( 'click', "#related-tags li", function(){
-			//alert('Clicked list. ' + $(this).text());
 			var selectTag = $.trim($(this).attr("val"));
 			var allTags = "";
 			$("#searched-tags").append('<li>'+selectTag+'</li>');
 			
-			/*Ashley*/
+			/*Ashley: Iterate through all the Searched Tags. Store the tags in the 'allTags' variable.*/
 			$("#searched-tags li").each(function(){
 				allTags += $.trim($(this).text()) + ",";
 			})
-
+			
+			/*Ashley: Remove the last ',' from the last 'Searched Tag'*/
 			allTags = allTags.slice(0,-1);
-			/*------*/
+			
+			/*Ashley: Make an AJAX POST request to the do_search.php file. Pass 'allTags' as data.*/
 			$.ajax({
 				url: "_php/do_search.php", 
-				/*data: {query: selectTag},*/
 				data:{query: allTags},
 				dataType: 'json', 
 				type: "POST",
@@ -32,58 +27,72 @@ $(document).ready(function() {
 					searchReturn(data);				
 				},
 				error: function(data){
-					console.log("ERROR");
-					console.log(data);			
+					console.log("ERROR: " + data);
 				}
 			});
 		});
 	
-	/*Ashley*/
+	/*Ashley: Event Handler for 'click' event of the 'Add Tag' button in the 'Tag' page.*/
 	$(".add-tag-form").on("click", ".addTagBtn", function(event){
-		//Prevent Default Action
+		/*Ashley: Prevent Default Action*/
 		event.preventDefault();
+		
+		/*Ashley: Check if the 'Select a Tag' field in the 'Tag' page has been populated*/
 		if($(this).siblings(".addTagText").val()){
-			var tagName = $(this).siblings(".addTagText").val();
-			var courseId = $(this).siblings(".courseId").val();
-				
+			/*Ashley: Capture the value from the 'Select a Tag' field as well as the value from the hidden 'Course Id' field.*/
+			var tagName = $(this).siblings(".addTagText").val(),
+				courseId = $(this).siblings(".courseId").val();
+			
+			/*Ashley: Make an AJAX POST request to the add_tag.php file. Send the tag name and the corresponding course id as data.*/
 			$.ajax({
 				url: "_php/add_tag.php",
 				type: "POST",
 				data:{tagName: tagName, courseId: courseId},
 				success: function(data){
-					console.log("Success");	
-					location.reload(forceGet = true);
+					/*Ashley: If the data was successfully inserted, reload the page*/
+					if(data == "Tag inserted successfully."){
+						location.reload(forceGet = true);
+					}else{/*Ashley: Else display the message returned from the add_tag.php file back to the user.*/
+						$("#resultsFeedback").text(data);
+					}
 				},
 				error: function(event){
 					console.log("ERROR: " + event.message);			
 				}
-			})
+			});
 		}
 	});
 	
+	/*Ashley: Event Handler for the 'mouseover' event on the 'Searched Tags' list elements*/
     $("#searched-tags").on("mouseover", "li", function(event){
-		//Prevent Default Action
+		/*Ashley: Prevent Default Action*/
 		event.preventDefault();
+		/*Ashley: Add the title attribute to the Hovered over Searched Tag.*/
 		$(this).attr("title", "Click to remove");
+		/*Ashley: Event Handler for the 'mouseleave' event on the 'Searched Tags' list elements*/
 	}).on("mouseleave", "li", function(event){
-		//Prevent Default Action
+		/*Ashley: Prevent Default Action*/
 		event.preventDefault();
+		/*Ashley: Remove the title attribute from the Searched Tag element which we are leaving.*/
 		$(this).attr("title", "");
+		/*Ashley: Event Handler for the 'click' event on the 'Searched Tags' list elements*/
 	}).on("click", "li", function(){
-		//Prevent Default Action
+		/*Ashley: Prevent Default Action*/
 		event.preventDefault();
+		/*Ashley: Remove the Searched Tag element.*/
 		$(this).remove();
-		/*Ashley*/
+		/*Ashley: Create a new variable to capture the Tags that remain in the 'Searched Tags' list.*/
 		var remainingTags = "";
+		/*Ashley: Iterate through all the Searched Tags. Store the tags in the 'remaingingTags' variable.*/
 		$("#searched-tags li").each(function(){
 			remainingTags += $.trim($(this).text()) + ",";
 		})
-
+		/*Ashley: Remove the last ',' from the last 'Searched Tag'*/
 		remainingTags = remainingTags.slice(0,-1);
-		/*------*/
+		
+		/*Ashley: Make an AJAX POST request to the do_search.php file. Pass 'remainingTags' as data.*/
 		$.ajax({
 			url: "_php/do_search.php", 
-			/*data: {query: selectTag},*/
 			data:{query: remainingTags},
 			dataType: 'json', 
 			type: "POST",
@@ -95,7 +104,6 @@ $(document).ready(function() {
 			}
 		});
 	});
-	/*------*/
 });
 
 
@@ -150,72 +158,75 @@ function initIndexSliders(){
 
 function initSearch(){
 	var searchval;
+	/*Ashley: Event Handler for the 'click' event on the 'Search' button*/
 	$("#searchBtn").click(function(e){
+		/*Ashley: Prevent Default Action*/
 		e.preventDefault();
-		/*Ashley*/
-		var continueExecution = true;
+		/*Ashley: Remove all the children from the 'Searched Tags' and 'Course Results' unordered lists.*/
 		$("#course-results").empty();
 		$("#searched-tags").empty();
+		/*Ashley: Store the 'Search Tag' value entered by the user in the 'Search' field to the searchval variable.*/
 		searchval = $('#search_query').val();
-		// $("#searched-tags li").each(function(){
-			// if($(this).text() === searchval){
-				// continueExecution = false;
-				// return false;
-			// }
-		// });
-		//if(continueExecution){
 			
-			//Add search tag to searched tags list
-			$("#searched-tags").append('<li>'+searchval+'</li>');
-
-			$.ajax({
-				url: "_php/do_search.php", 
-				data: {query: searchval},
-				dataType: 'json', 
-				type: "POST",
-				success: function(data){
-					searchReturn(data);				
-				},
-				error: function(data){
-					console.log("ERROR");
-					console.log(data);			
+		/*Ashley: Make an AJAX POST request to the add_tag.php file. Send the tag name and the corresponding course id as data.*/
+		$.ajax({
+			url: "_php/add_tag.php",
+			type: "POST",
+			data:{query: searchval},
+			success: function(data){
+				/*Ashley: If the tag not found, inform the user of the same.*/
+				if(data !== "OK to proceed"){
+					$("#searchTagFeedback").text(data);
+					return false;
+				}else{
+					$("#searchTagFeedback").text("");
+					//Add search tag to searched tags list
+					$("#searched-tags").append('<li>'+searchval+'</li>');
+					/*Ashley: Make an AJAX POST request to the do_search.php file. Pass 'searchval' as data.*/
+					$.ajax({
+						url: "_php/do_search.php", 
+						data: {query: searchval},
+						dataType: "json", 
+						type: "POST",
+						success: function(data){
+							searchReturn(data);				
+						},
+						error: function(data){
+							console.log("ERROR" + data);			
+						}
+					});
 				}
-			});
-		//}
-		/*------*/
+			},
+			error: function(event){
+				console.log("ERROR: " + event.message);			
+			}
+		});
+
 	});
 }
 
 function searchReturn(data){
-
-	console.log(data);
-	/*Ashley*/
+	/*Ashley: Create an array to hold the Searched Tags*/
 	var searchTermsArray = [];
+	/*Ashley: Iterate through all the Searched Tags. Store the tags in the 'searchTermsArray' array.*/
 	$("#searched-tags li").each(function(){
 		searchTermsArray.push($.trim($(this).text()));
 	});
-	//Iterate through search tags and add them to the interface
-	// if(!(data.search.length==0))
-	// {
-		// for (var i = 0; i < data.search.length; i++) {
-			// var sTag = data.search[i];
-			// $("#searched-tags").append('<li>' + sTag.name + '</li>');
-		// }
-	// }
-	// else{
-		// $("#searched-tags").append('<li>No Tags</li>');
-	// }
 	
-	//Iterate through related tags and add them to the interface
+	/*Ashley: Check if there is 'related tags' data returned from the php file.*/
 	if(data.related)
 	{
+		/*Ashley: Remove all the children from the 'Related Tags' unordered list.*/
 		$("#related-tags").empty();
+		/*Ashley: Iterate through 'related tags' object*/
 		for (var tag in data.related) {
+			/*Ashley: Check if the 'related tag' is present in the 'searchTermsArray', the array which contains the Searched Tags.*/
+			/*Ashley: If the 'related tag' is not found in the 'searchTermsArray', add that tag to the 'Related Tags' unordered list.*/
 			if($.inArray(tag, searchTermsArray) === -1)
 				$("#related-tags").append('<li class="tagList" val="' + tag + '">' + tag + '\t' + data.related[tag] + '</li>');
 		}
-	}
-	else{
+	/*Ashley: Else, remove all the children from the 'Related Tags' unordered list and append a List Item with a 'No Tags' value.*/
+	}else{
 		$("#related-tags").empty();
 		$("#related-tags").append('<li>No Tags</li>');
 	}
@@ -244,14 +255,7 @@ function searchReturn(data){
 			//add the search results to the list
 			
 			$("#course-results").append('<li><h4>' + sTag.name + '</h4><div>Instructor: ' + sTag.instructor + '</div><p>' + sTag.description + '</p><ul>' + tagsHTML + '</ul></li>');
-			//$("#course-results").append('<li><div class="courseNam"><h4>' + sTag.name + '</h4></div><div class="instructor">Instructor: ' + sTag.instructor + '</div><div class="courseDesc"><p>' + sTag.description + '</p></div><ul class="otherTags">' + tagsHTML + '</ul></li>');
-
-			//Add related tags to the list
-			//$("#related-tags").append(tagsHTML);
-		
 		}
-		//$("#related-tags").empty();
-		//$("#related-tags").append(rTags);
 	}
 	else{
 		$("#course-results").empty();

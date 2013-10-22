@@ -18,11 +18,9 @@ $search_array['results'] = array();
 $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
 mysql_select_db($authDBName);
 
-//$search_query = "Law and Policy";
 $search_query = $_POST["query"];
 
 /*Ashley*/
-// TO-DO - make this iterate through for multiple-term searches and add an OR clause to the query $q.
 
 $search_array['search']['name'] = $search_query;
 $search_terms = explode(',', $search_query);
@@ -34,10 +32,9 @@ $or_search_term = substr($or_search_term, 0, -1);
 /*------*/
 
 // assemble the main database query. This will return course and professor details.
-//$q = "SELECT DISTINCT course.*, instructor.*, tag.*, course_tag.course_tag_count FROM tag, course, course_tag, instructor, course_instructor WHERE '$or_search_term' AND course_tag.course_tag_tag_id=tag.tag_id AND course.course_id=course_tag.course_tag_course_id AND course.course_id=course_instructor.course_instructor_course_id AND instructor.instructor_id=course_instructor.course_instructor_instructor_id ORDER BY course_tag.course_tag_count DESC;";
 
-$q = "SELECT DISTINCT course.*, instructor.*, tag.*, course_tag.course_tag_count FROM tag, course, course_tag, instructor, course_instructor WHERE tag.tag_name IN (".$or_search_term.") AND course_tag.course_tag_tag_id=tag.tag_id AND course.course_id=course_tag.course_tag_course_id AND course.course_id=course_instructor.course_instructor_course_id AND instructor.instructor_id=course_instructor.course_instructor_instructor_id GROUP BY course.course_name ORDER BY course_tag.course_tag_count DESC;";
-//echo $q;
+$q = "SELECT DISTINCT course.*, instructor.*, tag.*, course_tag.course_tag_count FROM tag, course, course_tag, instructor, course_instructor WHERE tag.tag_name IN (".$or_search_term.") AND course_tag.course_tag_tag_id=tag.tag_id AND course.course_id=course_tag.course_tag_course_id AND course.course_id=course_instructor.course_instructor_course_id AND instructor.instructor_id=course_instructor.course_instructor_instructor_id GROUP BY course.course_name HAVING COUNT(DISTINCT course_tag.course_tag_id) = ".count($search_terms)." ORDER BY course_tag.course_tag_count DESC;";
+
 if ($DEBUG)	{echo "q: " . $q . "<br><br>";}
 
 $q_result = mysql_db_query($authDBName, $q);
@@ -89,7 +86,6 @@ while($q_row = mysql_fetch_array($q_result)) {
 			echo "</pre>";
 		}*/	
 
-		// TO-DO - check if the tag is the one that we searched for initially (in which case we won't include it in 'related')
         $exists = 0;
         foreach ($search_array['related'] as $key => $value) {
             if ($key == $this_tag_name){ // this tag already exists in our master related tag array. Increment the count.
@@ -146,7 +142,7 @@ echo json_encode($search_array);
 	search:
 		[name]
 	related:
-		[name,score]
+		[name,count]
 	results:
 		[name,instructor,description,tags[name,score]]
 	//A useful tool for parsing json can be found here: http://json.parser.online.fr/

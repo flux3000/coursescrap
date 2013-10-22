@@ -61,7 +61,7 @@
 						
 						echo "<div class='right-col'>";
                         echo '<div class="header">Tags</div>';
-							$course_tag_result = mysql_query("SELECT `course_tag_tag_id`, `course_tag_count` FROM `course_tag` WHERE `course_tag_course_id`='".$course_row["course_id"]."'", $dblink);
+							$course_tag_result = mysql_query("SELECT `course_tag_tag_id`, `course_tag_count` FROM `course_tag` WHERE `course_tag_course_id`='".$course_row["course_id"]."' ORDER BY `course_tag_count` DESC", $dblink);
 							while ($course_tag_row = mysql_fetch_array($course_tag_result)) {
 								$testresult = mysql_query("SELECT * FROM tag WHERE `tag_id`='".$course_tag_row["course_tag_tag_id"]."'", $dblink);
 								while ($testrow = mysql_fetch_array($testresult)) {
@@ -76,8 +76,10 @@
 								<input class="courseId" type="hidden" value=<?php echo $course_row["course_id"];?> />
 								<input class="addTagText" type="text" placeholder="Select a Tag" />
 								<input class="addTagBtn" value="Add Tag" type="submit" />
+								<div id="resultsFeedback"></div>
 							</form>
 						</div>
+						<div id="menu-container" style="position:absolute; width: 500px;"></div>
 					<?php
 						echo "</div>";
 				}
