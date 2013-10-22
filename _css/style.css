@@ -53,7 +53,7 @@ body {
 }
 
 .left-col .header{
-      font-size: 20px;
+    font-size: 20px;
     font-weight: bolder;
     padding: 5px;
     background:#CCC;
@@ -67,7 +67,6 @@ body {
     float: left;
     width: 450px;
     padding-left: 10px;
-    background: cornflowerblue;
 }
 
 .header {
@@ -164,9 +163,10 @@ label {
 
 .ui-helper-hidden-accessible { display:none; }
 ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all{
-    background: #CCC;
+    background: rgb(243, 243, 243);
     /*padding-top:5px;*/
     border: 1px solid rgb(100,149,237);
+    width: 250px;
 }
 ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li{
     padding-bottom:5px;
@@ -191,7 +191,7 @@ ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corne
    
 }
 #search_query{
-     width: 235px;
+    width: 235px;
     font-size: 14px;
 }
 #searchBtn{

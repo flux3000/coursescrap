@@ -146,7 +146,7 @@ function initIndexSliders(){
                 $(".search_slider").css("overflow", "hidden").animate({"width": "0%"}, aTime, function(){
                         $(this).remove();
                 });
-                $("body").append('<iframe src="add.php"></iframe>');
+                $("body").append('<iframe src="tag.php"></iframe>');
                 $('header').animate({
                         'opacity':'0'
                 }, aTime/3, function(){
