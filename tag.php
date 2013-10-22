@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>course (s)crap - add course</title>
 
@@ -34,7 +34,7 @@
         <a href="index.php"><img class="back" src="_img/back.png" alt="back"></a>
         <div id="title">
             course (s)crap
-        </div>
+        </div><!--<div id="title">-->
 
         <div id="content">
         <?php
@@ -47,7 +47,7 @@
 			}
         ?>
         <a id="addCourse" href="add_course.html">[add new course]</a><br><br>
-			<!--Ashley-->
+			<!--Ashley: Code to display the courses, tag, and instructor information-->
             <?php
 				$course = mysql_query("SELECT * FROM course", $dblink);
 				while ($course_row = mysql_fetch_array($course)) {
@@ -57,10 +57,10 @@
 						echo "<div class='left-col'>";
 							$instructor = mysql_fetch_array(mysql_query("SELECT * FROM `instructor` WHERE `instructor_id`='".$course_instructor_id["course_instructor_instructor_id"]."'", $dblink));						
 							echo '<div class="header">'.$course_row["course_name"]."</div><br>Instructor: ".$instructor["instructor_firstname"]." ".$instructor["instructor_lastname"]."<br><br>".$course_row["course_time"]."<br><br>".$course_row["course_description"]."<br><br>";					
-						echo "</div>";
+						echo "</div>";//<div class='left-col'>
 						
 						echo "<div class='right-col'>";
-                        echo '<div class="header">Tags</div>';
+                        echo '<div class="header">Tags</div>';//<div class="header">
 							$course_tag_result = mysql_query("SELECT `course_tag_tag_id`, `course_tag_count` FROM `course_tag` WHERE `course_tag_course_id`='".$course_row["course_id"]."' ORDER BY `course_tag_count` DESC", $dblink);
 							while ($course_tag_row = mysql_fetch_array($course_tag_result)) {
 								$testresult = mysql_query("SELECT * FROM tag WHERE `tag_id`='".$course_tag_row["course_tag_tag_id"]."'", $dblink);
@@ -68,7 +68,7 @@
 									echo $testrow["tag_name"]." (".$course_tag_row["course_tag_count"].") <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>&#43</a>   <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=dn'>&#45</a>"."<br><br>";
 								}
 							}
-						echo "</div>";
+						echo "</div>";//<div class='right-col'>
 						?>
 						
 						<div id="addTag">
@@ -76,17 +76,16 @@
 								<input class="courseId" type="hidden" value=<?php echo $course_row["course_id"];?> />
 								<input class="addTagText" type="text" placeholder="Select a Tag" />
 								<input class="addTagBtn" value="Add Tag" type="submit" />
-								<div id="resultsFeedback"></div>
+								<div id="resultsFeedback"></div><!--<div id="resultsFeedback">-->
 							</form>
-						</div>
-						<div id="menu-container" style="position:absolute; width: 500px;"></div>
+						</div><!--<div id="addTag">-->
+						<div id="menu-container" style="position:absolute; width: 500px;"></div><!--<div id="menu-container" style="position:absolute; width: 500px;">-->
 					<?php
-						echo "</div>";
+						echo "</div>";//<div class='course-listing'>
 				}
             ?>  
-		<!------>
-        </div>
-    </div>
+        </div><!--<div id="content">-->
+    </div><!--<div id="container">-->
 
 </body>
 </html>

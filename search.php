@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>course (s)crap - search</title>
 
@@ -35,35 +35,32 @@
         
 		<div id="title">
             SEARCH
-        </div>
+        </div><!--<div id="title">-->
 		
-
         <div id="search">
             <form action="" method="post">
                 <input id="search_query" type="text" placeholder="Enter search term">
 				<input id="searchBtn" value="Go" type="submit" />
 				<div id="searchTagFeedback"></div>
             </form>
-        </div>
+        </div><!--<div id="search">-->
 
         <div id="content">
             <div class="results-related">
                 <h3>Searched Tags</h3>
                 <ul id="searched-tags">
                 </ul>
-
                 <h3>Related Tags</h3>
                 <ul id="related-tags">
                 </ul>               
-
-            </div>
+            </div><!--<div class="results-related">-->
             <div class="results-main">
                 <ul id="course-results">
                 </ul>
-
-            </div>
-		</div>
-    </div>
+            </div><!--<div class="results-main">-->
+		</div><!--<div id="content">-->
+		
+    </div><!--<div id="container">-->
 
 </body>
 </html>
