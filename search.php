@@ -40,13 +40,14 @@
                 course (s)crap
             </div>    
             <div id="description">
-                Use this page to find I School classes based on topics or tags that interest you. Example tags: "Data Mining", "Law and Policy"
+                Use this page to find I School classes based on topics or tags that interest you. Refine your search by clicking on related tags.<br><br>
+                <span style="font-size:10pt;color:gray;">Example searches: "Data Mining", "Law and Policy"</span><br>
             </div>
         </div>
         <div id="search">
             <br><br><br><br>
             <form action="" method="post">
-                <input id="search_query" type="text" placeholder="Enter a topic or phrase">
+                <input id="search_query" type="text" placeholder="Enter a topic or tag">
                 <input id="searchBtn" value="Go" type="submit" />
                 <div id="searchTagFeedback"></div>
             </form>

@@ -115,7 +115,7 @@
                                                 if ($selected_course_id <> "") {
                                                     echo "&whichCourse=" . $selected_course_id;
                                                 }
-                                                echo "&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>[+]</a>&nbsp;&nbsp;&nbsp;";
+                                                echo "&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>[+]</a>&nbsp;";
                                                 echo "<a class='updn' href='_php/tag_update.php?action=course_tag";
                                                 if ($selected_course_id <> "") {
                                                     echo "&whichCourse=" . $selected_course_id;
