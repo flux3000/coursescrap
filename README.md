@@ -1,6 +1,8 @@
 iolab-meta
 ==========
 
+PROJECT TITLE: course (s)crap
+
 course (s)crap is a way for current and past I School students to describe the course offerings at the school using a community-ranked controlled vocabulary of tags (to help us cut through the metacrap). Future or current students who are interested in course offerings can search by tag to see what courses match their interests.
 
 Team members and roles
