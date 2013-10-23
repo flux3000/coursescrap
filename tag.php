@@ -76,9 +76,9 @@
             <?php
                 
                 if ($selected_course_id <> "") {
-                    $this_query = "SELECT * FROM course WHERE course_id=$selected_course_id";
+                    $this_query = "SELECT * FROM course WHERE course_id=$selected_course_id ORDER BY course.course_resource_id";
                 } else {
-                    $this_query = "SELECT * FROM course";
+                    $this_query = "SELECT * FROM course ORDER BY course.course_resource_id";
                 }
 				$course = mysql_query($this_query, $dblink);
 				while ($course_row = mysql_fetch_array($course)) {
@@ -115,7 +115,7 @@
                                                 if ($selected_course_id <> "") {
                                                     echo "&whichCourse=" . $selected_course_id;
                                                 }
-                                                echo "&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>[+]</a>&nbsp;&nbsp;&nbsp;";
+                                                echo "&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>[+]</a>&nbsp;";
                                                 echo "<a class='updn' href='_php/tag_update.php?action=course_tag";
                                                 if ($selected_course_id <> "") {
                                                     echo "&whichCourse=" . $selected_course_id;

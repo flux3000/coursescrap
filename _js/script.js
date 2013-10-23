@@ -199,7 +199,7 @@ function searchReturn(data){
 			/*Ashley: Check if the 'related tag' is present in the 'searchTermsArray', the array which contains the Searched Tags.*/
 			/*Ashley: If the 'related tag' is not found in the 'searchTermsArray', add that tag to the 'Related Tags' unordered list.*/
 			if($.inArray(tag, searchTermsArray) === -1)
-				$("#related-tags").append('<li class="tagList" val="' + tag + '">' + tag + '\t' + data.related[tag] + '</li>');
+				$("#related-tags").append('<li class="tagList" val="' + tag + '">' + tag + '</li>');
 		}
 	/*Ashley: Else, remove all the children from the 'Related Tags' unordered list and append a List Item with a 'No Tags' value.*/
 	}else{
