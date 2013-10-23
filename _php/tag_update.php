@@ -11,6 +11,7 @@ global $authDBPasswd;
 $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
 mysql_select_db($authDBName);
 
+$whichCourse = $_GET['whichCourse'];
 $courseid = $_GET['courseid'];
 $tagid = $_GET['tagid'];
 $dir = $_GET['dir'];
@@ -24,10 +25,13 @@ if ($action == "course_tag") {
 		$upd_query = "UPDATE course_tag SET course_tag_count=course_tag_count-1 WHERE course_tag_course_id=".$courseid." AND course_tag_tag_id=".$tagid.";";
 		$upd = mysql_query($upd_query);			
 	}
+
 	$my_url = "../tag.php?tagupdate=true";
 } else {
 	$my_url = "../tag.php?tagerror=true";
 }
-
+if ($whichCourse <> "") {
+    $my_url .= "&whichCourse=" . $whichCourse;
+}
 header("Location: " . $my_url);
 ?>

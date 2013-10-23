@@ -40,7 +40,7 @@
                 course (s)crap
             </div>    
             <div id="description">
-                Use this page to find I School classes based on topics or tags that interest you.
+                Use this page to find I School classes based on topics or tags that interest you. Example tags: "Data Mining", "Law and Policy"
             </div>
         </div>
         <div id="search">

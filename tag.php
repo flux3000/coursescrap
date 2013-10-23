@@ -111,7 +111,16 @@
                                                 echo "'>";
                                                 echo "<div class='tagrow_name'>".$testrow["tag_name"]." (".$course_tag_row["course_tag_count"].")</div>";
                                                 echo "<div class='tagrow_inc'>";
-                                                echo "<a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>&#43</a>   <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=dn'>&#45</a>";
+                                                echo "<a class='updn' href='_php/tag_update.php?action=course_tag";
+                                                if ($selected_course_id <> "") {
+                                                    echo "&whichCourse=" . $selected_course_id;
+                                                }
+                                                echo "&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>[+]</a>&nbsp;&nbsp;&nbsp;";
+                                                echo "<a class='updn' href='_php/tag_update.php?action=course_tag";
+                                                if ($selected_course_id <> "") {
+                                                    echo "&whichCourse=" . $selected_course_id;
+                                                }
+                                                echo "&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=dn'>[&ndash;]</a>";
                                                 echo "</div>";
 
                                                 echo '</div>'; // end tagrow
