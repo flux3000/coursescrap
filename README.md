@@ -21,3 +21,4 @@ Known bugs
 - Would prefer to use AJAX call when adding/voting on tags rather than reloading page
 - When you add a new tag to an existing search, it does not add the new term into the search query box
 - Layout breaks a little bit in Firefox
+- Doesn't handle multiple professors for a course
