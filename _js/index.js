@@ -48,6 +48,12 @@ function initIndexSliders(){
 			$(this).hide();
         });
     });
+	$(".info").click(function(){
+		$(".popup").show();
+	});
+	$(".close").click(function(){
+		$(".popup").hide();
+	});
 }
 
 function showevent(){

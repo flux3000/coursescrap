@@ -69,3 +69,42 @@ iframe{
 	position: absolute;
 	z-index: -1;
 }
+.info{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width:25px;
+	cursor: pointer;
+}
+.popup{
+	position: absolute;
+	width: 26%;
+	margin: 10% 37%;
+	background-color: white;
+	border: 1px solid black;
+	display:none;
+}
+.popup .close{
+	float: right;
+	margin-right: 4px;
+	color: gray;
+	cursor: pointer;
+}
+.popup h2{
+	background-color: #F7F7F7;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+	border-bottom: 1px solid gray;
+}
+.popup p{
+	padding: 10px
+}
+.popup dt{
+	padding: 3px 10px;
+}
+.popup dd{
+	padding: 3px 10px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
