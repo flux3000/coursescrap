@@ -151,6 +151,7 @@ function initSearch(){
 			data:{query: searchval},
 			success: function(data){
 				/*Ashley: If the tag not found, inform the user of the same.*/
+				$(".results-related").slideDown();
 				if(data !== "OK to proceed"){
 					$("#searchTagFeedback").text(data);
 					$("#searchTagFeedback").fadeIn(80);
