@@ -32,39 +32,59 @@
     
     <div id="container">
         <img class="back" src="_img/back.png" alt="back">
-        <div id="title">
-            course (s)crap
+        <div id="titlebar">
+            <div id="title">
+                course (s)crap
+            </div>
+            <div id="navbar">
+                <div id="navbar-add">
+                    <a id="addCourse" href="add_course.html">[add new course]</a>
+                </div>
+                <div id="navbar-select">
+                    <form action="tag.php" method="GET">
+                    <label for="select-course">Choose a course:</label><select id="select-course">
+                    <?php
+                        $course_result = mysql_query("SELECT * FROM course ORDER BY course_name", $dblink);
+                        while ($course_row = mysql_fetch_array($course_result)) {
+                            echo "<option value=" . $course_row["course_id"] . ">" . $course_row["course_resource_id"] . " - " . $course_row["course_name"] . "</option>";
+                        }                    
+                    ?>
+                    </select>
+                    <input type="submit" name="submit-course" value="Go">
+                    </form>
+                </div>                
+            </div>
         </div>
 
         <div id="content">
-        <?php
-		if(isset($_GET['insert_successful'])){
-			if ($_GET['insert_successful'] == "true") { 
-				echo '<span class="success">Course successfully added.</span><br/>';
-			} elseif ($_GET['insert_error'] != "") { 
-				echo '<span class="error">Error adding course: ' . $_GET['insert_error'] . '</span><br/>';
-			}
-			}
-        ?>
-        <a id="addCourse" href="add_course.html">[add new course]</a><br><br>
+
+        <br><br>
 			<div id="course-listings">
             <!--Ashley-->
             <?php
+
+            $selected_course_id = $_GET["select-course"];
+            if ($selected_course_id <> "") {
+                $this_query = "SELECT * FROM course WHERE course_id=$selected_course_id";
+            } else {
+                $this_query = "SELECT * FROM course";
+            }
+
 				$course = mysql_query("SELECT * FROM course", $dblink);
 				while ($course_row = mysql_fetch_array($course)) {
 					$course_instructor_id = mysql_fetch_array(mysql_query("SELECT `course_instructor_instructor_id` FROM `course_instructor` WHERE `course_instructor_course_id`='".$course_row["course_id"]."'", $dblink));
 					
                     echo "<div class='course-listing'>";
 
-                    echo "<div class='course-listing-header contracted'>";
+                    echo "<div class='course-listing-header'>";
                         echo '<div class="course-title">'.$course_row["course_name"].'</div>';
                     echo '</div>';
 
-                    echo '<div class="course-listing-content" style="display:none;">';
+                    echo '<div class="course-listing-content"">';
 
     					echo "<div class='left-col'>";
     						$instructor = mysql_fetch_array(mysql_query("SELECT * FROM `instructor` WHERE `instructor_id`='".$course_instructor_id["course_instructor_instructor_id"]."'", $dblink));						
-    						echo "<br>Instructor: ".$instructor["instructor_firstname"]." ".$instructor["instructor_lastname"]."<br><br>".$course_row["course_time"]."<br><br>".$course_row["course_description"]."<br><br>";					
+    						echo "<br>Instructor: ".$instructor["instructor_firstname"]." ".$instructor["instructor_lastname"]."<br><br>".$course_row["course_description"]."<br><br>";					
     					echo "</div>";
     					
     					echo "<div class='right-col'>";
@@ -73,7 +93,9 @@
         						while ($course_tag_row = mysql_fetch_array($course_tag_result)) {
         							$testresult = mysql_query("SELECT * FROM tag WHERE `tag_id`='".$course_tag_row["course_tag_tag_id"]."'", $dblink);
         							while ($testrow = mysql_fetch_array($testresult)) {
-        								echo $testrow["tag_name"]." (".$course_tag_row["course_tag_count"].") <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>&#43</a>   <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=dn'>&#45</a>"."<br><br>";
+                                        if ($course_tag_row["course_tag_count"] > 0) {
+        								    echo $testrow["tag_name"]." (".$course_tag_row["course_tag_count"].") <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=up'>&#43</a>   <a class='updn' href='_php/tag_update.php?action=course_tag&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=dn'>&#45</a>"."<br><br>";
+                                        }
         							}
         						}
         						

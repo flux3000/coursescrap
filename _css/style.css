@@ -31,6 +31,26 @@ body {
 
 /* page elements */
 
+#titlebar {
+    width: 100%;
+
+}
+
+#navbar {
+    overflow: hidden;
+    width: 100%;
+    padding: 18px 12px;
+}
+
+#navbar-add {
+    float: left;
+}
+#navbar-select {
+    float: left;
+    width: 600px;
+    margin-left: 12px;
+}
+
 #content h3{
     background: #CCC;
     font-size: large;

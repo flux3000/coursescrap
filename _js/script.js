@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});	
 	$('.addTagText').autocomplete({source:'_php/autocomplete.php', minLength:1});
 
-	/* Ryan */
+	/* Ryan 
     $(".course-listing").on("click", ".course-listing-header.contracted", function() {
     	$(".course-listing-content").slideUp();
     	$(this).removeClass("contracted");
@@ -15,8 +15,7 @@ $(document).ready(function() {
     	$(".course-listing-content").slideUp();
     	$(this).removeClass("expanded");
     	$(this).addClass("contracted");
-    });
-
+    });*/
 	
 	$(document).on( 'click', "#related-tags li", function(){
 			var selectTag = $.trim($(this).attr("val"));
@@ -64,7 +63,7 @@ $(document).ready(function() {
 				data:{tagName: tagName, courseId: courseId},
 				success: function(data){
 					/*Ashley: If the data was successfully inserted, reload the page*/
-					if(data == "Tag inserted successfully."){
+					if((data == "Tag inserted successfully." || data == "Tag updated successfully.")){
 						location.reload(forceGet = true);
 					}else{/*Ashley: Else display the message returned from the add_tag.php file back to the user.*/
 						$("#resultsFeedback").text(data);

@@ -27,7 +27,11 @@
 			if($tag_course_search_query_result = mysql_query($tag_course_search_query)) {
 				$query_run_num_rows = mysql_num_rows($tag_course_search_query_result);
 				if($query_run_num_rows == 1) {
-					echo "Tag already exists.";
+					//echo "Tag already exists.";
+					$upd_query = "UPDATE course_tag SET course_tag_count=course_tag_count+1 WHERE course_tag_course_id=".$courseId." AND course_tag_tag_id=".$tagId["tag_id"].";";
+					if ($upd = mysql_query($upd_query)) {
+						echo "Tag updated successfully.";
+					}
 				} else {
 					$insert_query = "INSERT INTO `course_tag` VALUES('','".mysql_real_escape_string($courseId)."','".$tagId["tag_id"]."','1')";
 					 if($insert_query_run=mysql_query($insert_query)) {
