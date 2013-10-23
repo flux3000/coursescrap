@@ -82,7 +82,7 @@ body {
 .course-listing {
     border: 1px dotted #999;
     overflow: auto;
-	width: 100%;
+	width: 99.9%;
     margin-bottom: 12px;
 }
 
