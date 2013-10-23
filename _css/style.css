@@ -13,6 +13,12 @@ body {
     padding: 12px;
 }
 
+#description {
+    font-size: 12pt;
+    padding: 8pt;
+
+}
+
 #container {
         margin: 40px auto;
         overflow: hidden;
@@ -43,12 +49,12 @@ body {
 }
 
 #navbar-add {
-    float: left;
+    float: right;
+    margin-right: 12px;
 }
 #navbar-select {
     float: left;
-    width: 600px;
-    margin-left: 12px;
+    width: 900px;
 }
 
 #content h3{
@@ -179,23 +185,48 @@ input {
 
 label {
     font-weight: bold;
+    margin-right: 8px;
+}
+
+select {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+    height: 22px;
+    vertical-align: middle;
+}
+
+input.addTagText {
+    width: 200px;
+}
+
+button.addTagBtn {
+    font-family: 'Open Sans', sans-serif;
+    height: 24px;
+    font-size: 9pt;
+    vertical-align: middle; 
+}
+button.whichCourseBtn {
+    font-family: 'Open Sans', sans-serif;
+    height: 28px;
+    font-size: 11pt;
+    vertical-align: middle; 
 }
 
 /* jquery UI autocomplete */
 
 .ui-helper-hidden-accessible { display:none; }
-ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all{
+
+ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all{
     background: rgb(243, 243, 243);
-    /*padding-top:5px;*/
     border: 1px solid rgb(100,149,237);
     width: 250px;
+    font-size:10pt;
+    font-family: 'Open Sans', sans-serif;
 }
-ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li{
-    padding-bottom:5px;
-    padding-top: 5px;
-    border: 1px solid rgb(100,149,237);
+ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li{
+    border-bottom: 1px dotted #000;
+    padding: 3px;
 }
-
 /* text elements */
 
 .success {
@@ -269,7 +300,9 @@ ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corne
 
 
 #addCourse {
-    padding: 10px 15px;
+    padding: 4px 6px;
+    font-size: 8pt;
+    text-decoration: none;
     background: #4479BA;
     color: #FFF;
     -webkit-border-radius: 4px;
@@ -289,10 +322,10 @@ ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corne
     user-select:none;
     cursor:pointer;
 }
-.addCourse:hover {
+#addCourse:hover {
     background: #356094;
     border: solid 1px #2A4E77;
-    text-decoration: none;
+    text-decoration: underline;
 }
 .addCourse:active {
     -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
@@ -312,7 +345,56 @@ ul#ui-id-1.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corne
 	opacity: 0.4;
 }
 
+/* tag voting list / display */
+.tag-box {
+    float: left;
+    max-width: 450px;
+    padding: 12px 0px 12px 12px;
+    text-align: left;
+    font-size: 10pt;
+
+}
+
+.tagrow {
+    width: 450px;
+    height: 22px;
+    border-top-style: dotted;
+    border-top-width: 1px;
+    border-top-color: lightGrey;
+}
+.tagrow .first {
+    border: none;
+}
+
+.tagrow_name {
+    width: 410px;
+    float: left;
+    text-align: left;
+    vertical-align: top;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.tagrow_inc {
+    width: 40px;
+    float: right;
+    text-align: right;
+    vertical-align: top;
+    white-space: nowrap;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+.tagrow_add {
+    width: 450px;
+    padding: 8px 0px 4px 0px;
+}
 
 
+/* text or links */
+
+a.course:link {font-size: inherit; text-decoration: none; color: #000;}
+a.course:visited {font-size: inherit; text-decoration: none; color: #000;}
+a.course:hover {font-size: inherit; text-decoration: underline; color: #4479BA;}
+a.course:active {font-size: inherit; text-decoration: underline; color: #4479BA;}
 
 
