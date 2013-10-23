@@ -12,6 +12,9 @@
 	
 	$DEBUG = 0; // change to 1 if we want to see a bunch of debugging comments.
 	
+	//If the 'tagName' and 'courseId' parameters are set then search the 'tag' table. If the tag does or does not exist in the database, return an appropriate message to the user.
+	//If the tag does exist, query the 'course_tag' table with the 'courseId' sent in the POST request and the 'tagId' returned from the query on the 'tag' table.
+	//If the tag hs been assoicated with the course, then send an appropriate message to the user, else insert the tag in the 'course_tag' table and associate it with the course.
 	if(isset($_POST["tagName"],$_POST["courseId"])){
 		$tagName = $_POST["tagName"];
 		$courseId = $_POST["courseId"];
@@ -43,6 +46,8 @@
 			}
 		}		
 	}
+	
+	//If the 'query' parameter is set then search the 'tag' table. If the tag does or does not exist in the database, return an appropriate message to the user.
 	if(isset($_POST["query"])){
 		$query = $_POST["query"];
 		$tag_search_query = "SELECT `tag_id` FROM tag WHERE `tag_name` = '".mysql_real_escape_string($query)."'";

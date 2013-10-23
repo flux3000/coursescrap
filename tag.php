@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>course (s)crap - add course</title>
 
@@ -58,7 +58,6 @@
 
         <div id="content">
 
-        <br><br>
 			<div id="course-listings">
             <!--Ashley-->
             <?php
@@ -76,7 +75,9 @@
 					
                     echo "<div class='course-listing'>";
 
+
                     echo "<div class='course-listing-header'>";
+
                         echo '<div class="course-title">'.$course_row["course_name"].'</div>';
                     echo '</div>';
 
