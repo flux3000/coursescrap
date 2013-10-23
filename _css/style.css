@@ -1,4 +1,4 @@
-/* main layout */
+/* main layout and navigation */
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -6,17 +6,51 @@ body {
     font-size: 11pt;
 }
 
+#titlebar {
+    width: 1100px;
+
+}
+
 #title {
+    float: left;
     font-family: 'Raleway', sans-serif;
     font-size: 24pt;
     font-weight: bold;
     padding: 12px;
+    width: 600px;
+}
+
+#sitetitle {
+    float: right;
+    color: #CCC;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    padding: 0px 12px;
+}
+
+#navbar {
+    overflow: hidden;
+    width: 100%;
+    padding: 18px 12px;
+}
+
+#navbar-add {
+    float: right;
+    margin-right: 12px;
+}
+
+#navbar-select {
+    float: left;
+    width: 900px;
 }
 
 #description {
+    float: left;
     font-size: 12pt;
     padding: 8pt;
-
+    width: 100%;
+    margin-bottom: 8px;
 }
 
 #container {
@@ -35,27 +69,7 @@ body {
     /*padding: 12px;*/
 }
 
-/* page elements */
-
-#titlebar {
-    width: 100%;
-
-}
-
-#navbar {
-    overflow: hidden;
-    width: 100%;
-    padding: 18px 12px;
-}
-
-#navbar-add {
-    float: right;
-    margin-right: 12px;
-}
-#navbar-select {
-    float: left;
-    width: 900px;
-}
+/* page-specific elements */
 
 #content h3{
     background: #CCC;
@@ -64,12 +78,6 @@ body {
     -webkit-border-radius:50px;
     padding-left: 20px;
 }
-
-/*#content ul{
-    padding-top: 5px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-}*/
 
 .course-listing {
     border: 1px dotted #999;
@@ -87,10 +95,12 @@ body {
 }
 
 .left-col{
+    line-height: 120%;
     float: left;
     width: 600px;    
     padding:10px;
 }
+
 .right-col{
     float: left;
     width: 450px;
@@ -110,60 +120,67 @@ body {
 }
 
 .results-related ul li{
-
     padding: 5px;
 }
+
 .results-main {
     float: left;
     width: 700px;
-    /*padding-left: 20px;*/
 }
 
 /* Elements handling display of search results */
+
 #course-results{
     padding-top:10px;
     padding-left: 8px;
     padding-bottom: 8px;
 
 }
+
 #course-results h4{
     font-size: 20px;
     font-weight: bolder;
     padding: 10px 5px;
 
 }
+
 #course-results ul{
     padding:5px;
 }
+
 #course-results li{
     border: 1px solid #CCC;
     padding-bottom:10px;
 }
+
 #course-results div{
     background: #CCC;
     padding: 8px;
 }
+
 #course-results p{
-    /*border: 1px solid #ccc;*/
+    line-height: 120%;
     padding: 8px;
 }
+
 #course-results ul li {
     display:inline;
     padding: 8px;
     color: cornflowerblue;
     text-decoration:underline;
     border:0;
-    }
+}
+
 #course-results ul li sup {
     font-size: 12px;
     vertical-align: top; 
-
-    }
+}
 
 .updn {
     text-decoration: none;
     padding-left: 2px;
 }
+
 .header {
     font-weight: bold;
     font-size: 13pt;
@@ -222,22 +239,25 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all{
     font-size:10pt;
     font-family: 'Open Sans', sans-serif;
 }
+
 ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li{
     border-bottom: 1px dotted #000;
     padding: 3px;
 }
 
 /* search term box */
+
 #search{
+    margin-top: 14px;
     padding: 12px;
-   
 }
+
 #search_query{
     width: 235px;
     font-size: 14px;
 }
-#searchBtn{
 
+#searchBtn{
     background-color: #4479BA;
     /*background-color: #F36CBC;*/
     -webkit-border-radius:100px;
@@ -256,21 +276,14 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
     -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
     -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
+
 #searchBtn:hover{
-    
     box-shadow: 0px 0px 1px #777;
     background: #356094;
     border: solid 1px #2A4E77;
     text-decoration: none;
-
 }
 
-/*#searched-tags{
-    padding-top: 5px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    color:cornflowerblue;
-}*/
 #related-tags, #searched-tags{
     padding-top: 5px;
     padding-left: 30px;
@@ -292,7 +305,6 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
 	text-decoration: underline;
 	cursor: pointer;
 }
-
 
 #addCourse {
     padding: 4px 6px;
@@ -317,11 +329,13 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
     user-select:none;
     cursor:pointer;
 }
+
 #addCourse:hover {
     background: #356094;
     border: solid 1px #2A4E77;
     text-decoration: underline;
 }
+
 .addCourse:active {
     -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
@@ -329,25 +343,28 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
     background: #2E5481;
     border: solid 1px #203E5F;
 }
+
 .deleteButton{
 	display: none;
 }
+
 .back{
 	float: right;
 	cursor: pointer;
 }
+
 .back:hover{
 	opacity: 0.4;
 }
 
 /* tag voting list / display */
+
 .tag-box {
     float: left;
     max-width: 450px;
     padding: 12px 0px 12px 12px;
     text-align: left;
     font-size: 10pt;
-
 }
 
 .tagrow {
@@ -357,6 +374,7 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
     border-top-width: 1px;
     border-top-color: lightGrey;
 }
+
 .tagrow .first {
     border: none;
 }
@@ -379,17 +397,21 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
     margin-bottom: 2px;
     margin-top: 2px;
 }
+
 .tagrow_add {
     width: 450px;
     padding: 8px 0px 4px 0px;
 }
 
+/* text and links */
 
-/* text or links */
+h2 {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
 
 a.course:link {font-size: inherit; text-decoration: none; color: #000;}
 a.course:visited {font-size: inherit; text-decoration: none; color: #000;}
 a.course:hover {font-size: inherit; text-decoration: underline; color: #4479BA;}
 a.course:active {font-size: inherit; text-decoration: underline; color: #4479BA;}
-
-

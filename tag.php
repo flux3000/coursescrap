@@ -36,8 +36,11 @@
         <img class="back" src="_img/back.png" alt="back">
         <div id="titlebar">
             <div id="title">
-                course (s)crap
+                TAG
             </div>
+            <div id="sitetitle">
+                course (s)crap
+            </div>    
             <div id="description">
                 Use this page to find classes you've taken, and describe them by tag. Either vote up or down an existing tag, or enter one using the text box.
             </div>            

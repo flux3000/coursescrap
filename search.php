@@ -32,18 +32,25 @@
     
     <div id="container">
 		<img class="back" src="_img/back.png" alt="back">
-        
-		<div id="title">
-            SEARCH
-        </div><!--<div id="title">-->
-		
+		<div id="titlebar">
+            <div id="title">
+                SEARCH
+            </div>
+            <div id="sitetitle">
+                course (s)crap
+            </div>    
+            <div id="description">
+                Use this page to find I School classes based on topics or tags that interest you.
+            </div>
+        </div>
         <div id="search">
+            <br><br><br><br>
             <form action="" method="post">
                 <input id="search_query" type="text" placeholder="Enter a topic or phrase">
-				<input id="searchBtn" value="Go" type="submit" />
-				<div id="searchTagFeedback"></div>
+                <input id="searchBtn" value="Go" type="submit" />
+                <div id="searchTagFeedback"></div>
             </form>
-        </div><!--<div id="search">-->
+        </div>
 
         <div id="content">
             <div class="results-related">
@@ -53,7 +60,7 @@
                 <h3>Related Tags</h3>
                 <ul id="related-tags">
                 </ul>               
-            </div><!--<div class="results-related">-->
+            </div>
             <div class="results-main">
                 <ul id="course-results">
                 </ul>
