@@ -63,12 +63,12 @@
                     </select>
                     <input type="submit" value="Find Course">
                     </form>
-                </div>
+                </div> <!--navbar-select-->
                 <div id="navbar-add">
                     <a id="addCourse" href="add_course.html">[add new course]</a>
-                </div>                
-            </div>
-        </div>
+                </div>           
+            </div> <!--navbar-->
+        </div> <!--titlebar-->
 
         <div id="content">
 
@@ -87,12 +87,12 @@
                     echo "<div class='course-listing'>";
                         echo "<div class='course-listing-header'>";
                             echo '<div class="course-title"><a class="course" href="http://www.ischool.berkeley.edu/courses/'.$course_row["course_resource_id"].'" target="_new">'.$course_row["course_resource_id"].' - '.$course_row["course_name"].'</a></div>';
-                        echo '</div>';
+                        echo '</div>'; // end course-listing-header
                         echo '<div class="course-listing-content">';
         					echo "<div class='left-col'>";
         						$instructor = mysql_fetch_array(mysql_query("SELECT * FROM `instructor` WHERE `instructor_id`='".$course_instructor_id["course_instructor_instructor_id"]."'", $dblink));						
         						echo "Instructor: ".$instructor["instructor_firstname"]." ".$instructor["instructor_lastname"]."<br><br>".$course_row["course_description"]."<br><br>";					
-        					echo "</div>";
+        					echo "</div>"; // end left-col
         					
         					echo "<div class='tag-box'>";
                                 echo '<div class="header">Tags</div>';
@@ -109,7 +109,7 @@
                                                     echo " first";
                                                 }
                                                 echo "'>";
-                                                echo "<div class='tagrow_name'>".$testrow["tag_name"]." (".$course_tag_row["course_tag_count"].")</div>";
+                                                echo "<div class='tagrow_name'>".$testrow["tag_name"]." (".$course_tag_row["course_tag_count"].")</div>"; // end tagrow_name
                                                 echo "<div class='tagrow_inc'>";
                                                 echo "<a class='updn' href='_php/tag_update.php?action=course_tag";
                                                 if ($selected_course_id <> "") {
@@ -121,10 +121,8 @@
                                                     echo "&whichCourse=" . $selected_course_id;
                                                 }
                                                 echo "&courseid=".$course_row["course_id"]."&tagid=".$testrow["tag_id"]."&dir=dn'>[&ndash;]</a>";
-                                                echo "</div>";
-
+                                                echo "</div>"; // end tagrow_inc
                                                 echo '</div>'; // end tagrow
-
                                             }
             							}
             						}
@@ -138,7 +136,7 @@
                                         <button type="button" class="addTagBtn">Apply Tag</button>
         								<div id="resultsFeedback"></div>
         							</form>
-        						</div>
+        						</div> <!--end tagrow_add-->
         						<div id="menu-container" style="position:absolute; width: 410px;"></div>
         					   <?php
         					   echo "</div>"; // end tag-box
@@ -146,10 +144,8 @@
                         echo "</div>"; // end course-listing
                         }
                         ?>
-            </div>
-		<!------>
-        </div>
-    </div>
-
+            </div> <!--end course-listings-->
+        </div> <!--end content-->
+    </div> <!--end container-->
 </body>
 </html>

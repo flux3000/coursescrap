@@ -163,11 +163,14 @@ body {
 }
 
 #course-results ul li {
-    display:inline;
-    padding: 8px;
+    display:inline-block;
+    padding: 4px;
+	margin: 8px;
     color: cornflowerblue;
-    text-decoration:underline;
-    border:0;
+    border:1px solid #CCC;
+	-webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius: 10px;
 }
 
 #course-results ul li sup {

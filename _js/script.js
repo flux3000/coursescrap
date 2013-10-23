@@ -4,19 +4,6 @@ $(document).ready(function() {
 	$('#search_query').autocomplete({source:'_php/autocomplete.php', minLength:2});	
 	$('.addTagText').autocomplete({source:'_php/autocomplete.php', minLength:1});
 
-	/* Ryan 
-    $(".course-listing").on("click", ".course-listing-header.contracted", function() {
-    	$(".course-listing-content").slideUp();
-    	$(this).removeClass("contracted");
-    	$(this).addClass("expanded");
-    	$(this).siblings(".course-listing-content").slideDown();
-    });    
-    $(".course-listing").on("click", ".course-listing-header.expanded", function() {
-    	$(".course-listing-content").slideUp();
-    	$(this).removeClass("expanded");
-    	$(this).addClass("contracted");
-    });*/
-	
 	$(document).on( 'click', "#related-tags li", function(){
 			var selectTag = $.trim($(this).attr("val"));
 			var allTags = "";
@@ -25,11 +12,11 @@ $(document).ready(function() {
 			/*Ashley: Iterate through all the Searched Tags. Store the tags in the 'allTags' variable.*/
 			$("#searched-tags li").each(function(){
 				allTags += $.trim($(this).text()) + ",";
-			})
+			});
 			
 			/*Ashley: Remove the last ',' from the last 'Searched Tag'*/
 			allTags = allTags.slice(0,-1);
-			
+
 			/*Ashley: Make an AJAX POST request to the do_search.php file. Pass 'allTags' as data.*/
 			$.ajax({
 				url: "_php/do_search.php", 
@@ -103,7 +90,7 @@ $(document).ready(function() {
 		})
 		/*Ashley: Remove the last ',' from the last 'Searched Tag'*/
 		remainingTags = remainingTags.slice(0,-1);
-		
+
 		/*Ashley: Make an AJAX POST request to the do_search.php file. Pass 'remainingTags' as data.*/
 		$.ajax({
 			url: "_php/do_search.php", 
@@ -127,10 +114,8 @@ function init() {
 	//Backbutton clicked
 	$(".back").click(function(){
 		parent.showevent();
-	})
-
+	});
 }
-
 
 function initSearch(){
 	var searchval;
@@ -230,7 +215,6 @@ function searchReturn(data){
 				}
 			}
 			//add the search results to the list
-
 			$("#course-results").append('<li><h4><a class="course" href="http://www.ischool.berkeley.edu/courses/' + sTag.resource_id + '" target="_new">' + sTag.resource_id + ' - ' + sTag.name + '</a></h4><div>Instructor: ' + sTag.instructor + '</div><p>' + sTag.description + '</p><ul>' + tagsHTML + '</ul></li>');
 		}
 	}

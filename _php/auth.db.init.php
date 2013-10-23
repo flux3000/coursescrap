@@ -3,7 +3,7 @@
 //
 // Set these DB variables to match the system being used
 
-$authDBHost = "localhost";
+$authDBHost 	= "localhost";
 
 $authDBName     = "ryanbak_course_tracker";
 

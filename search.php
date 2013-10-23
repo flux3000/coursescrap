@@ -28,8 +28,7 @@
     <script src="_js/script.js"></script>
 
 </head>
-<body>
-    
+<body>  
     <div id="container">
 		<img class="back" src="_img/back.png" alt="back">
 		<div id="titlebar">
@@ -52,7 +51,6 @@
                 <div id="searchTagFeedback"></div>
             </form>
         </div>
-
         <div id="content">
             <div class="results-related">
                 <h3>Searched Tags</h3>
@@ -65,10 +63,8 @@
             <div class="results-main">
                 <ul id="course-results">
                 </ul>
-            </div><!--<div class="results-main">-->
-		</div><!--<div id="content">-->
-		
-    </div><!--<div id="container">-->
-
+            </div>
+		</div>	
+    </div>
 </body>
 </html>
