@@ -133,7 +133,6 @@ body {
 
 }
 #course-results ul{
-
     padding:5px;
 }
 #course-results li{
@@ -259,7 +258,7 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
     font-size: 125%;
     text-shadow:1px 1px #4479BA;
     cursor:pointer;
-    border: 1px solid ##4479BA;
+    border: 1px solid #4479BA;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bolder;
@@ -291,6 +290,12 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
 
 #searched-tags li:hover{
 	cursor: pointer;
+}
+
+#resultsFeedback {
+    padding: 2px;
+    display: none;
+    color: #4479BA;
 }
 
 .tagList:hover{

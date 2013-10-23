@@ -23,7 +23,7 @@
 		
 		$tagId = mysql_fetch_array($tag_search_query_result);
 		if(mysql_num_rows($tag_search_query_result) == 0){
-			echo "Sorry! That tag does not Exist. Please select one from the available list.";
+			echo "That tag does not exist. Please select one from the available list.";
 		}else{
 			$tag_course_search_query = "SELECT * FROM `course_tag` WHERE `course_tag_course_id` = '".mysql_real_escape_string($courseId)."' AND `course_tag_tag_id` = '".$tagId["tag_id"]."'";
 			
@@ -54,7 +54,7 @@
 		$tag_search_query_result = mysql_query($tag_search_query);
 		
 		if(mysql_num_rows($tag_search_query_result) == 0){
-			echo "Sorry! That tag does not Exist. Please select one from the available list.";
+			echo "That tag does not exist. Please select one from the available list.";
 		}else{
 			echo "OK to proceed";
 		}

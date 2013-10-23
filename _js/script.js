@@ -67,6 +67,7 @@ $(document).ready(function() {
 						location.reload(forceGet = true);
 					}else{/*Ashley: Else display the message returned from the add_tag.php file back to the user.*/
 						$("#resultsFeedback").text(data);
+						$("#resultsFeedback").fadeIn(80);
 					}
 				},
 				error: function(event){
@@ -228,8 +229,8 @@ function searchReturn(data){
 				}
 			}
 			//add the search results to the list
-			
-			$("#course-results").append('<li><h4>' + sTag.name + '</h4><div>Instructor: ' + sTag.instructor + '</div><p>' + sTag.description + '</p><ul>' + tagsHTML + '</ul></li>');
+
+			$("#course-results").append('<li><h4><a class="course" href="http://www.ischool.berkeley.edu/courses/' + sTag.resource_id + '" target="_new">' + sTag.resource_id + ' - ' + sTag.name + '</a></h4><div>Instructor: ' + sTag.instructor + '</div><p>' + sTag.description + '</p><ul>' + tagsHTML + '</ul></li>');
 		}
 	}
 	else{

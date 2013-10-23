@@ -1,14 +1,13 @@
 <?php
-
 /*
-	The structure is
-	search:
-		[name]
-	related:
-		[name,count]
-	results:
-		[name,instructor,description,tags[name, count]]
-	//A useful tool for parsing json can be found here: http://json.parser.online.fr/
+The structure of the resulting JSON object that this script creates is:
+
+search:
+	[name]
+related:
+	[name,count]
+results:
+	[name,instructor,description,tags[name, count]]
 
 SAMPLE OBJECT:
 
@@ -21,18 +20,20 @@ SAMPLE OBJECT:
 	{
 	"name":"Information Law and Policy", 
 	"instructor":"Dierdre Mulligan", 
-	"description": "Description Text", 
+	"description": "This is text describing the class.", 
+	"ccn": "27205",
+	"resource_id": "i205",
 	"tags":[{"name":"info", "count":3}, {"name":"design", "count":1}]
 	},
 
 	{
 	"name":"Intellectual Property Law for the Information Industries", 
 	"instructor":"Brian Carver", 
-	"description": "Three hours of lecture per week. This course will provide an overview of the intellectual property laws with which information managers need to be familiar. It will start with a consideration of trade secrecy law that information technology and other firms routinely use to protect commercially valuable information. It will then consider the role that copyright law plays in the legal protection of information products and services. Although patents for many years rarely were available to protect information innovations, patents on such innovations are becoming increasingly common. As a consequence, it is necessary to consider standards of patentability and the scope of protection that patent affords to innovators. Trademark law allows firms to protect words or symbols used to identify their goods or services and to distinguish them from the goods and services of other producers. It offers significant protection to producers of information products and services. Because so many firms license intellectual property rights, some coverage of licensing issues is also important. Much of the course will concern the legal protection of computer software and databases, but it will also explore some intellectual property issues arising in cyberspace.", 
+	"description": "This is text describing the class.",
+	"ccn": "21805",
+	"resource_id": "i235", 
 	"tags":[{"name":"info", "count":3}, {"name":"design", "count":1, "law":1}]
-	}
-]
-
+	}]
 }
 */
 
@@ -49,7 +50,6 @@ $DEBUG = 0; // set to 1 to be shown debug output
 $search_array['search'] = array();
 $search_array['related'] = array();
 $search_array['results'] = array();
-
 
 // connect to the database
 $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
@@ -127,7 +127,6 @@ while($q_row = mysql_fetch_array($q_result)) {
 			$search_array['related'][$this_tag_name] = 1;
 		}		
 	}
-
 
 	$search_result_array["tags"] = $search_result_tag_array;
 	

@@ -85,7 +85,7 @@
                         echo "<div class='course-listing-header'>";
                             echo '<div class="course-title"><a class="course" href="http://www.ischool.berkeley.edu/courses/'.$course_row["course_resource_id"].'" target="_new">'.$course_row["course_resource_id"].' - '.$course_row["course_name"].'</a></div>';
                         echo '</div>';
-                        echo '<div class="course-listing-content"">';
+                        echo '<div class="course-listing-content">';
         					echo "<div class='left-col'>";
         						$instructor = mysql_fetch_array(mysql_query("SELECT * FROM `instructor` WHERE `instructor_id`='".$course_instructor_id["course_instructor_instructor_id"]."'", $dblink));						
         						echo "Instructor: ".$instructor["instructor_firstname"]." ".$instructor["instructor_lastname"]."<br><br>".$course_row["course_description"]."<br><br>";					

@@ -39,7 +39,7 @@
 		
         <div id="search">
             <form action="" method="post">
-                <input id="search_query" type="text" placeholder="Enter search term">
+                <input id="search_query" type="text" placeholder="Enter a topic or phrase">
 				<input id="searchBtn" value="Go" type="submit" />
 				<div id="searchTagFeedback"></div>
             </form>
