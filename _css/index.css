@@ -78,8 +78,8 @@ iframe{
 }
 .popup{
 	position: absolute;
-	width: 26%;
-	margin: 10% 37%;
+	width: 50%;
+	margin: 10% 25%;
 	background-color: white;
 	border: 1px solid black;
 	display:none;
@@ -100,6 +100,9 @@ iframe{
 .popup p{
 	padding: 10px
 }
+.popup dl{
+	font-size: 75%;
+}
 .popup dt{
 	padding: 3px 10px;
 }
@@ -107,4 +110,5 @@ iframe{
 	padding: 3px 10px;
 	margin-left: 50px;
 	margin-bottom: 10px;
+	font
 }
