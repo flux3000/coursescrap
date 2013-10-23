@@ -153,7 +153,7 @@ function initSearch(){
 				/*Ashley: If the tag not found, inform the user of the same.*/
 				if(data !== "OK to proceed"){
 					$("#searchTagFeedback").text(data);
-					return false;
+					$("#searchTagFeedback").fadeIn(80);
 				}else{
 					$("#searchTagFeedback").text("");
 					//Add search tag to searched tags list

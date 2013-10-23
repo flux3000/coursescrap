@@ -226,16 +226,6 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
     border-bottom: 1px dotted #000;
     padding: 3px;
 }
-/* text elements */
-
-.success {
-    font-weight: bold;
-    color: green;
-}
-.error {
-    font-weight: bold;
-    color: red;
-}
 
 /* search term box */
 #search{
@@ -292,7 +282,7 @@ ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all li
 	cursor: pointer;
 }
 
-#resultsFeedback {
+#resultsFeedback, #searchTagFeedback {
     padding: 2px;
     display: none;
     color: #4479BA;
