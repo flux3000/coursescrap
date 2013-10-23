@@ -33,6 +33,7 @@
 		<p class="first"><span class="h">course</span></p><p class="second"><span class="h">(s)crap</span></p>
 	</header>
 	<img src="_img/info.png" class="info" alt="infotag">
+	<div class="bg close"></div>
 	<div class="popup">
 		<div class="close">x</div>
 		<h2>How this prototype relates to metacrap</h2>
