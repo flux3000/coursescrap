@@ -53,10 +53,10 @@
         </div>
         <div id="content">
             <div class="results-related">
-                <h3>Searched Tags</h3>
+                <h3>Searched Tags  <span style="font-size:8pt;">(click to remove)</span></h3>
                 <ul id="searched-tags">
                 </ul>
-                <h3>Related Tags</h3>
+                <h3>Related Tags  <span style="font-size:8pt;">(click to add)</span></h3>
                 <ul id="related-tags">
                 </ul>               
             </div>
